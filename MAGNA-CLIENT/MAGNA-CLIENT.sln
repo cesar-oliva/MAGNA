@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGNA_CLIENT.Abstractions", "MAGNA-CLIENT.Abstractions\MAGNA_CLIENT.Abstractions.csproj", "{EB235023-5C8F-444B-A224-C328DA8DCB9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGNA_CLIENT.Entities", "MAGNA_CLIENT.Entity\MAGNA_CLIENT.Entities.csproj", "{10A96585-4CFB-4965-BB4F-5ECC4120997D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGNA_CLIENT.Application.Web", "MAGNA_CLIENT.Application.Web\MAGNA_CLIENT.Application.Web.csproj", "{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB235023-5C8F-444B-A224-C328DA8DCB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB235023-5C8F-444B-A224-C328DA8DCB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB235023-5C8F-444B-A224-C328DA8DCB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB235023-5C8F-444B-A224-C328DA8DCB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A96585-4CFB-4965-BB4F-5ECC4120997D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A96585-4CFB-4965-BB4F-5ECC4120997D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A96585-4CFB-4965-BB4F-5ECC4120997D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A96585-4CFB-4965-BB4F-5ECC4120997D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E5474DA-14E7-4AA8-9DB8-F6C6A301A657}
+	EndGlobalSection
+EndGlobal

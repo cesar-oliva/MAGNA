@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "4adc5bd8-7c43-4916-be5e-c63a16ef2f60": {
+      "ProjectGuid": "4adc5bd8-7c43-4916-be5e-c63a16ef2f60",
+      "DisplayName": "MAGNA_CLIENT.Application.Web2",
+      "ColorIndex": 0
+    },
+    "1307184e-8d7d-4ef1-a5f9-964fceafc89c": {
+      "ProjectGuid": "1307184e-8d7d-4ef1-a5f9-964fceafc89c",
+      "DisplayName": "MAGNA-CLIENT.Service",
+      "ColorIndex": 1
+    },
+    "eb235023-5c8f-444b-a224-c328da8dcb9c": {
+      "ProjectGuid": "eb235023-5c8f-444b-a224-c328da8dcb9c",
+      "DisplayName": "MAGNA_CLIENT.Abstractions",
+      "ColorIndex": 2
+    },
+    "193b9af3-1f3b-45f7-8633-0e2c45189ec7": {
+      "ProjectGuid": "193b9af3-1f3b-45f7-8633-0e2c45189ec7",
+      "DisplayName": "MAGNA-CLIENT.Service2",
+      "ColorIndex": 3
+    },
+    "1a003615-94ea-4e28-b1d6-70178529ab13": {
+      "ProjectGuid": "1a003615-94ea-4e28-b1d6-70178529ab13",
+      "DisplayName": "MAGNA-CLIENT.Entity2",
+      "ColorIndex": 4
+    },
+    "8da655de-88ac-4e43-9e66-6fd2224a2cb2": {
+      "ProjectGuid": "8da655de-88ac-4e43-9e66-6fd2224a2cb2",
+      "DisplayName": "MAGNA_CLIENT.Service",
+      "ColorIndex": 5
+    },
+    "10a96585-4cfb-4965-bb4f-5ecc4120997d": {
+      "ProjectGuid": "10a96585-4cfb-4965-bb4f-5ecc4120997d",
+      "DisplayName": "MAGNA_CLIENT.Entities",
+      "ColorIndex": 6
+    },
+    "caecba3b-1299-463b-bb02-f57e71647f5c": {
+      "ProjectGuid": "caecba3b-1299-463b-bb02-f57e71647f5c",
+      "DisplayName": "MAGNA_CLIENT.Application.Web",
+      "ColorIndex": 7
+    },
+    "eaa5384c-8472-4cac-86f2-ee5c9b09ccfe": {
+      "ProjectGuid": "eaa5384c-8472-4cac-86f2-ee5c9b09ccfe",
+      "DisplayName": "MAGNA_CLIENT.Application.Web",
+      "ColorIndex": 8
+    }
+  },
+  "NextColorIndex": 9
+}

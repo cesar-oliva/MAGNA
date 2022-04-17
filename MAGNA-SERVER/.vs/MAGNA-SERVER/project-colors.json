@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "43ad6c06-1270-4b37-ac79-45bec7376e93": {
+      "ProjectGuid": "43ad6c06-1270-4b37-ac79-45bec7376e93",
+      "DisplayName": "MAGNA-SERVER.DataAccess",
+      "ColorIndex": 0
+    },
+    "738ce8e4-a342-4db2-96ac-31511b38fb26": {
+      "ProjectGuid": "738ce8e4-a342-4db2-96ac-31511b38fb26",
+      "DisplayName": "MAGNA-SERVER.Repository",
+      "ColorIndex": 1
+    },
+    "a9c9b514-5dd8-4e21-943c-4340085cf3d7": {
+      "ProjectGuid": "a9c9b514-5dd8-4e21-943c-4340085cf3d7",
+      "DisplayName": "MAGNA-SERVER.Abstractions",
+      "ColorIndex": 2
+    },
+    "d0dc6ab5-20c2-4ad8-b564-ca9c4f60c177": {
+      "ProjectGuid": "d0dc6ab5-20c2-4ad8-b564-ca9c4f60c177",
+      "DisplayName": "MAGNA-SERVER.Entities",
+      "ColorIndex": 3
+    },
+    "7be218bb-d94d-44b8-ac13-d7068b79563a": {
+      "ProjectGuid": "7be218bb-d94d-44b8-ac13-d7068b79563a",
+      "DisplayName": "MAGNA-SERVER.WebApi",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

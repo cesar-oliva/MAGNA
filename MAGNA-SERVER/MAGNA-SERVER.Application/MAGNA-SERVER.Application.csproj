@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MAGNA_SERVER.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MAGNA-SERVER.Abstractions\MAGNA-SERVER.Abstractions.csproj" />
+    <ProjectReference Include="..\MAGNA-SERVER.Entities\MAGNA-SERVER.Entities.csproj" />
+    <ProjectReference Include="..\MAGNA-SERVER.Repository\MAGNA-SERVER.Repository.csproj" />
+    <ProjectReference Include="..\MAGNA-SERVER.Services\MAGNA-SERVER.Services.csproj" />
+  </ItemGroup>
+
+</Project>

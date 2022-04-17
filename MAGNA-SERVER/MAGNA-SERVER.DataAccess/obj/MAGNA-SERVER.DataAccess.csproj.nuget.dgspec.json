@@ -1,0 +1,320 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.DataAccess\\MAGNA-SERVER.DataAccess.csproj": {}
+  },
+  "projects": {
+    "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj",
+        "projectName": "MAGNA-SERVER.Abstractions",
+        "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\Cesar\\.nuget\\packages\\",
+        "outputPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.DataAccess\\MAGNA-SERVER.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.DataAccess\\MAGNA-SERVER.DataAccess.csproj",
+        "projectName": "MAGNA-SERVER.DataAccess",
+        "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.DataAccess\\MAGNA-SERVER.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Cesar\\.nuget\\packages\\",
+        "outputPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj": {
+                "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj"
+              },
+              "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Entities\\MAGNA-SERVER.Entities.csproj": {
+                "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Entities\\MAGNA-SERVER.Entities.csproj"
+              },
+              "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Services\\MAGNA-SERVER.Services.csproj": {
+                "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Services\\MAGNA-SERVER.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Entities\\MAGNA-SERVER.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Entities\\MAGNA-SERVER.Entities.csproj",
+        "projectName": "MAGNA-SERVER.Entities",
+        "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Entities\\MAGNA-SERVER.Entities.csproj",
+        "packagesPath": "C:\\Users\\Cesar\\.nuget\\packages\\",
+        "outputPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj": {
+                "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Services\\MAGNA-SERVER.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Services\\MAGNA-SERVER.Services.csproj",
+        "projectName": "MAGNA-SERVER.Services",
+        "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Services\\MAGNA-SERVER.Services.csproj",
+        "packagesPath": "C:\\Users\\Cesar\\.nuget\\packages\\",
+        "outputPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj": {
+                "projectPath": "H:\\UTN\\UTN (IV año)\\Sistemas Industriales\\MAGNA\\MAGNA-SERVER\\MAGNA-SERVER.Abstractions\\MAGNA-SERVER.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[6.16.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.16.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.16.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

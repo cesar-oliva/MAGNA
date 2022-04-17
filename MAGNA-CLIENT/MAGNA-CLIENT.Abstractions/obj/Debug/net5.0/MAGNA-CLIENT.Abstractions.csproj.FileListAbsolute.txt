@@ -1,0 +1,11 @@
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA-CLIENT.Abstractions.deps.json
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA-CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\ref\MAGNA-CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA-CLIENT.Abstractions.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA-CLIENT.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA-CLIENT.Abstractions.AssemblyInfoInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA-CLIENT.Abstractions.AssemblyInfo.cs
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA-CLIENT.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA-CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\ref\MAGNA-CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA-CLIENT.Abstractions.pdb

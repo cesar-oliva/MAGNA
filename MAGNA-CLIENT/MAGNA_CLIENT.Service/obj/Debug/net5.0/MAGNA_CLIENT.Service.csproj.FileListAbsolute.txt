@@ -1,0 +1,34 @@
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Service.deps.json
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Service.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\ref\MAGNA_CLIENT.Service.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Service.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.csproj.AssemblyReference.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.AssemblyInfoInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.AssemblyInfo.cs
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.csproj.CoreCompileInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.csproj.CopyComplete
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\ref\MAGNA_CLIENT.Service.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Entity.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Entity.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Service.deps.json
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Service.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\ref\MAGNA_CLIENT.Service.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Service.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Entities.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\bin\Debug\net5.0\MAGNA_CLIENT.Entities.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.csproj.AssemblyReference.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.GeneratedMSBuildEditorConfig.editorconfig
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.AssemblyInfoInputs.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.AssemblyInfo.cs
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.csproj.CoreCompileInputs.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.csproj.CopyComplete
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\ref\MAGNA_CLIENT.Service.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA_CLIENT.Service\obj\Debug\net5.0\MAGNA_CLIENT.Service.pdb

@@ -1,0 +1,44 @@
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.AssemblyInfo.cs
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.deps.json
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.runtimeconfig.json
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.runtimeconfig.dev.json
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\ref\MAGNA-SERVER.DataAccess.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.pdb
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Entities.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Services.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Abstractions.pdb
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Entities.pdb
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Services.pdb
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.csproj.CopyComplete
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\ref\MAGNA-SERVER.DataAccess.dll
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.pdb
+C:\Users\Cesar\Desktop\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.genruntimeconfig.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.csproj.AssemblyReference.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.AssemblyInfoInputs.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.AssemblyInfo.cs
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.csproj.CoreCompileInputs.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.deps.json
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.runtimeconfig.json
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.runtimeconfig.dev.json
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.DataAccess.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Abstractions.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Entities.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Services.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Abstractions.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Entities.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\bin\Debug\net5.0\MAGNA-SERVER.Services.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.csproj.CopyComplete
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\ref\MAGNA-SERVER.DataAccess.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\MAGNA-SERVER.DataAccess.genruntimeconfig.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-SERVER\MAGNA-SERVER.DataAccess\obj\Debug\net5.0\refint\MAGNA-SERVER.DataAccess.dll

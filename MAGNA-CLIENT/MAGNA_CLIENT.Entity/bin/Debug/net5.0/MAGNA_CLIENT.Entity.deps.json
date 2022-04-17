@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MAGNA_CLIENT.Entity/1.0.0": {
+        "runtime": {
+          "MAGNA_CLIENT.Entity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MAGNA_CLIENT.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

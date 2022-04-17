@@ -1,0 +1,24 @@
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.deps.json
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\ref\MAGNA_CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.csproj.AssemblyReference.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.AssemblyInfoInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.AssemblyInfo.cs
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\ref\MAGNA_CLIENT.Abstractions.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.deps.json
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\bin\Debug\net5.0\MAGNA_CLIENT.Abstractions.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.AssemblyInfoInputs.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.AssemblyInfo.cs
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.csproj.CoreCompileInputs.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\ref\MAGNA_CLIENT.Abstractions.dll
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.pdb
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\MAGNA_CLIENT.Abstractions.csproj.AssemblyReference.cache
+H:\UTN\UTN (IV año)\Sistemas Industriales\MAGNA\MAGNA-CLIENT\MAGNA-CLIENT.Abstractions\obj\Debug\net5.0\refint\MAGNA_CLIENT.Abstractions.dll

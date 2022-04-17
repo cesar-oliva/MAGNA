@@ -1,0 +1,27 @@
+create table AssembleType(
+[Id] int primary key identity(1,1),
+[AssembleTypeDescription] varchar(100),
+);
+
+create table AssembleProperty(
+[Id] int primary key identity(1,1),
+[AssemblePropertyDescription] varchar(100),
+[AssemblePropertyDetail] varchar(100)
+);
+
+create table AssembleVersion(
+[Id] int primary key identity(1,1),
+[AssembleVersionNumber] int,
+[AssembleVersionCode] varchar(50),
+[AssembleVersionDescription] varchar(100),
+[IdAssembleProperty] int references AssembleProperty(Id),
+[IdAssembleVersion] int references AssembleVersion(Id),
+);
+
+create table Assemble(
+[Id] int primary key identity(1,1),
+[AssembleCode] varchar(50),
+[AssembleDescription] varchar(100),
+[IdAssembleProperty] int references AssembleProperty(Id),
+[IdAssembleVersion] int references AssembleVersion(Id),
+);

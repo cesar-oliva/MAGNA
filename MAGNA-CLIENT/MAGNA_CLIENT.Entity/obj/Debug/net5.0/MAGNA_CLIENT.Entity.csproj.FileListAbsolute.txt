@@ -1,0 +1,12 @@
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\bin\Debug\net5.0\MAGNA_CLIENT.Entity.deps.json
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\bin\Debug\net5.0\MAGNA_CLIENT.Entity.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\bin\Debug\net5.0\ref\MAGNA_CLIENT.Entity.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\bin\Debug\net5.0\MAGNA_CLIENT.Entity.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.AssemblyInfoInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.AssemblyInfo.cs
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\ref\MAGNA_CLIENT.Entity.dll
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.pdb
+C:\Users\Cesar\Desktop\MAGNA-CLIENT\MAGNA_CLIENT.Entity\obj\Debug\net5.0\MAGNA_CLIENT.Entity.csproj.AssemblyReference.cache
