@@ -9785,7 +9785,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
-      "React.AspNet >= 5.2.12"
+      "React.AspNet >= 5.2.12",
+      "React.Core >= 5.2.12"
     ]
   },
   "packageFolders": {
@@ -9887,6 +9888,10 @@
             "version": "[5.0.2, )"
           },
           "React.AspNet": {
+            "target": "Package",
+            "version": "[5.2.12, )"
+          },
+          "React.Core": {
             "target": "Package",
             "version": "[5.2.12, )"
           }

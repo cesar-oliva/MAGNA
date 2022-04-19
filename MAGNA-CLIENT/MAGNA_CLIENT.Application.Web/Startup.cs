@@ -105,6 +105,8 @@ namespace MAGNA_CLIENT.Application.Web
                 //config
                 //  .SetLoadBabel(false)
                 //  .AddScriptWithoutTransform("~/js/bundle.server.js");
+                JavaScriptEngineSwitcher.Core.JsEngineSwitcher.Current.DefaultEngineName = V8JsEngine.EngineName;
+                JavaScriptEngineSwitcher.Core.JsEngineSwitcher.Current.EngineFactories.AddV8(); 
             });
 
             app.UseStaticFiles();

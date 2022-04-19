@@ -1,25 +1,32 @@
-﻿class CommentBox extends React.Component {
+﻿const data = [
+    { id: 1, author: 'Daniel Lo Nigro', text: 'Hello ReactJS.NET World!' },
+    { id: 2, author: 'Pete Hunt', text: 'This is one comment' },
+    { id: 3, author: 'Jordan Walke', text: 'This is *another* comment' },
+];
+
+class CommentBox extends React.Component {
     render() {
         return (
             <div className="commentBox">
-             <h1 class="display-4">Welcome</h1>
-                <CommentList />
+                <h1>Comments</h1>
+                <CommentList data={this.props.data} />
                 <CommentForm />
             </div>
         );
     }
 }
+
+
 class CommentList extends React.Component {
     render() {
-        return (
-            <div className="commentList">
-                <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-                <Comment author="Cesar Oliva">
-                    Hello ReactJS.NET World!
-                </Comment>
-            </div>
-        );
+        const commentNodes = this.props.data.map(comment => (
+            <Comment author={comment.author} key={comment.id}>
+                {comment.text}
+            </Comment>
+        ));
+        return <div className="commentList">{commentNodes}</div>;
     }
+}}
 }
 
 class CommentForm extends React.Component {
@@ -31,12 +38,16 @@ class CommentForm extends React.Component {
 }
 
 class Comment extends React.Component {
+    rawMarkup() {
+        const md = new Remarkable();
+        const rawMarkup = md.render(this.props.children.toString());
+        return { __html: rawMarkup };
+    }
     render() {
-        const md = createRemarkable();
         return (
             <div className="comment">
                 <h2 className="commentAuthor">{this.props.author}</h2>
-                {md.render(this.props.children.toString())}
+                <span dangerouslySetInnerHTML={this.rawMarkup()} />
             </div>
         );
     }
@@ -50,7 +61,7 @@ function createRemarkable() {
     return new remarkable();
 }
 
-ReactDOM.render(<CommentBox />, document.getElementById('content'));
+ReactDOM.render(<CommentBox data={data} />, document.getElementById('content'));
 
 
 
