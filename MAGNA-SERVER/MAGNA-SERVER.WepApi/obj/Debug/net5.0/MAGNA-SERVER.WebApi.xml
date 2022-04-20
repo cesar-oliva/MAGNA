@@ -20,7 +20,7 @@
             nos quiere delegar una ejecucion), es aqui donde se cachea de manera global.
             en el try ejecutamos el siguiente mildeware, encapsulamos todo el manejo de errores y todos los
             errores que se disparen dentro del siguiente mildeware hacia adelante se capturan dentro del try
-            y en el catch con el logger creado con el logger factory vamos a logear el eror con el mensaje que 
+            y en el catch con el logger creado con el logger factory vamos a logear el error con el mensaje que 
             queremos mas la excepcion y llamamos al metodo HandleGlobalExceptionAsync
             </summary>
             <param name="httpContext"></param>

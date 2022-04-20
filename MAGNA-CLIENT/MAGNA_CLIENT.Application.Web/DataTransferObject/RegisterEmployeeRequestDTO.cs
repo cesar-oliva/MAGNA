@@ -46,6 +46,6 @@ namespace MAGNA_CLIENT.Application.Web.DataTransferObject
         [Required]
         public int EmployeeState { get; set; }
         [Required]
-        public Gender Gender { get; set; }
+        public Guid GenderId { get; set; }
     }
 }

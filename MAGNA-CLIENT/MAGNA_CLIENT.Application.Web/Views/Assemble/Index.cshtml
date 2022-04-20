@@ -74,7 +74,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
+                   @* <th scope="col">Id</th>*@
                     <th scope="col">Code</th>
                     <th scope="col">Description</th>
                     <th scope="col">Type</th>
@@ -84,7 +84,7 @@
                 @foreach (var assemble in Model)
                 {
                     <tr>
-                        <td>@assemble.Id</td>
+                        @*<td>@assemble.Id</td>*@
                         <td>@assemble.AssembleCode</td>
                         <td>@assemble.AssembleDescription</td>
                         <td>@assemble.AssembleType.AssembleTypeDescription</td>

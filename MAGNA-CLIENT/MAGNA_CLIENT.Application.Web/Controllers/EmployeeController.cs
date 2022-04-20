@@ -19,6 +19,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         const string nameService = "https://localhost:5001/";
         const string serviceGetEmployee = "api/Employee";
         const string serviceGetGender = "api/Gender";
+
         private readonly ICrudAsync<RegisterEmployeeRequestDTO> con = new ServiceEmployeeDTO();
         private readonly ICrudAsync<QueryGenderRequestDTO> cong = new ServiceGender();
         private readonly IMapper _mapper;
@@ -45,54 +46,23 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
-            List<SelectListItem> items = genderDTOList.ConvertAll(g =>
-            {
-                return new SelectListItem()
-                {
-                    Text = g.GenderDescription.ToString(),
-                    Value = g.Id.ToString(),
-                    Selected = false
-                };
-            });
-            ViewBag.items = items;
+            ViewBag.items = await GetGenderList(); ;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromForm]IFormFile file,Employee employee)
         {
             if (ModelState.IsValid)
-            {
-                var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
-                List<SelectListItem> items = genderDTOList.ConvertAll(g =>
-                {
-                    return new SelectListItem()
-                    {
-                        Text = g.GenderDescription.ToString(),
-                        Value = g.Id.ToString(),
-                        Selected = false
-                    };
-                });
-                ViewBag.items = items;
-                foreach (var item in genderDTOList)
-                {
-                    if (item.Id.Equals(employee.Gender.Id))
-                    {
-                        employee.Gender.GenderDescription = item.GenderDescription;
-                        employee.Gender.GenderState = item.GenderState;
-                    }
-                }
-                //string folder = "~/employee/profilepicture/";
-                //if (employee.EmployeePhotoUrl != null)
-                //{
-                //    folder += Guid.NewGuid().ToString() + "_" + file.FileName;
-                //    string server = Path.Combine(folder);
-                //}
+            { 
+                employee.Id = Guid.NewGuid();
                 var employeeDTO = _mapper.Map<RegisterEmployeeRequestDTO>(employee);
-                //employeeDTO.EmployeePhotoUrl = folder;
                 var request = await con.PostCreateEntity(nameService, serviceGetEmployee, employeeDTO);
                 TempData["mensaje_create"] = "employee created successfully";
                 if (request) return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["mensaje_error"] = "An error occurred while creating the employee";
             }
             return View();
         }
@@ -103,17 +73,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         public async Task<IActionResult> Update(Guid id)
         {
             var employee = await con.GetDetailEntity(nameService, serviceGetEmployee, id);
-            var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
-            List<SelectListItem> items = genderDTOList.ConvertAll(g =>
-            {
-                return new SelectListItem()
-                {
-                    Text = g.GenderDescription.ToString(),
-                    Value = g.Id.ToString(),
-                    Selected = false
-                };
-            });
-            ViewBag.items = items;
+            ViewBag.items = await GetGenderList();
             var employeeDTO = await con.GetUpdateEntity(nameService, serviceGetEmployee, id);
             var result = _mapper.Map<Employee>(employeeDTO);
             return View(result);
@@ -123,41 +83,13 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
-                List<SelectListItem> items = genderDTOList.ConvertAll(g =>
-                {
-                    return new SelectListItem()
-                    {
-                        Text = g.GenderDescription.ToString(),
-                        Value = g.Id.ToString(),
-                        Selected = false
-                    };
-                });
-                ViewBag.items = items;
-                foreach (var item in genderDTOList)
-                {
-                    if (item.Id.Equals(employee.Gender.Id))
-                    {
-                        employee.Gender.GenderDescription = item.GenderDescription;
-                        employee.Gender.GenderState = item.GenderState;
-                    }
-                }
-                //string folder = "~/employee/profilepicture/";
-                //if (employee.EmployeePhotoUrl != null)
-                //{
-                //    folder += Guid.NewGuid().ToString() + "_" + file.FileName;
-                //    string server = Path.Combine(folder);
-                //}
                 var employeeDTO = _mapper.Map<RegisterEmployeeRequestDTO>(employee);
-                // employeeDTO.EmployeePhotoUrl = folder;
                 var request = await con.PutUpdateEntity(nameService, serviceGetEmployee, employeeDTO);
-                
                 if (request)
                 {
                     TempData["mensaje_update"] = "employee updated successfully";
                     return RedirectToAction("Index");
-                }
-                    
+                }       
             }
             TempData["mensaje_delete"] = "an error occurred during the operation";
             return RedirectToAction("Index");
@@ -172,18 +104,6 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
             {
                 return NotFound();
             }
-            var employee = await con.GetDetailEntity(nameService, serviceGetEmployee, id);
-            var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
-            List<SelectListItem> items = genderDTOList.ConvertAll(g =>
-            {
-                return new SelectListItem()
-                {
-                    Text = g.GenderDescription.ToString(),
-                    Value = g.Id.ToString(),
-                    Selected = false
-                };
-            });
-            ViewBag.items = items;
             var employeeDTO = await con.GetUpdateEntity(nameService, serviceGetEmployee,id);
             var result = _mapper.Map<Employee>(employeeDTO);
             return View(result);
@@ -194,26 +114,10 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
-                List<SelectListItem> items = genderDTOList.ConvertAll(g =>
-                {
-                    return new SelectListItem()
-                    {
-                        Text = g.GenderDescription.ToString(),
-                        Value = g.Id.ToString(),
-                        Selected = false
-                    };
-                });
-                ViewBag.items = items;
-              
-                if (ModelState.IsValid)
-                {
-                    var request = await con.GetDeleteEntity(nameService, serviceGetEmployee, employee.Id);
-                    TempData["mensaje_delete"] = "employee deleted successfully";
-                    if (request) return RedirectToAction("Index");
-                }
+                var request = await con.GetDeleteEntity(nameService, serviceGetEmployee, employee.Id);
+                TempData["mensaje_delete"] = "employee deleted successfully";
+                if (request) return RedirectToAction("Index");
                 return View();
-
             }
             TempData["mensaje_delete"] = "an error occurred during the operation";
             return RedirectToAction("Index");
@@ -223,6 +127,23 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         */
         [HttpGet]
         public async Task<IActionResult> Detail(Guid id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var employeeDTO = await con.GetDetailEntity(nameService, serviceGetEmployee, id);
+            var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
+            foreach (var item in genderDTOList)
+            {
+                if (item.Id.Equals(employeeDTO.GenderId))
+                    ViewBag.items = item.GenderDescription;
+            }
+            var employee = _mapper.Map<Employee>(employeeDTO);
+            return View(employee);
+        }
+
+        public async Task<List<SelectListItem>> GetGenderList()
         {
             var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
             List<SelectListItem> items = genderDTOList.ConvertAll(g =>
@@ -234,14 +155,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
                     Selected = false
                 };
             });
-            ViewBag.items = items;
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var employeeDTO = await con.GetDetailEntity(nameService, serviceGetEmployee, id);
-            var employee = _mapper.Map<Employee>(employeeDTO);
-            return View(employee);
+            return items;
         }
     }
 }

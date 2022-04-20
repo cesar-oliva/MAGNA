@@ -46,16 +46,8 @@ namespace MAGNA_SERVER.WebApi.DataTransferObject
         public DateTime? EmployeeEndDate { get; set; }
         [Required]
         public int EmployeeState { get; set; }
-
-        
-        //// Clave Externa
-        //[ForeignKey("Gender")]
-        //[Required]
-        //public int GenderId { get; set; }
-        //// Objeto que representa la clave externa.
-        //[ForeignKey("GenderId")]
         [Required]
-        public Gender Gender { get; set; }
+        public Guid GenderId { get; set; }
     }
 }
 

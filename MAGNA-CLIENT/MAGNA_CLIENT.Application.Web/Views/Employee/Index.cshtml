@@ -62,7 +62,13 @@
         <div class="col-sm-6">
             <a class="btn btn-success d-block" asp-action="Create" asp-controller="Employee">Add New Employee</a>
         </div>
-    </div>
+</div>
+@*<div class="form-inline">
+       <label class="sr-only" for="name-Filter">Search</label>
+       <input class="form-control" id="myInput" type="text" placeholder="Search.." />
+       <button type="button" class="btn btn-primary" mr-sm-2>Search</button>
+       <br />
+</div>*@
 
    <div class="row">
         @if (Model.Count() > 0)
@@ -70,7 +76,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
+                    @*<th scope="col">Id</th>*@
                     <th scope="col">Code</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
@@ -78,11 +84,11 @@
 
                 </tr>
             </thead>
-            <tbody> 
+            <tbody id="myTable"> 
                 @foreach (var employee in Model)
                 {
                     <tr>
-                        <td>@employee.Id</td>
+                        @*<td>@employee.Id</td>*@
                         <td>@employee.EmployeeCode</td>
                         <td>@employee.EmployeeFirstName</td>
                         <td>@employee.EmployeeLastName</td>
@@ -106,6 +112,7 @@
     }
   </div>
 
+
   <script>
   //Autoclose
     window.setTimeout(function(){
@@ -113,5 +120,15 @@
             $(this).remove();
         });
     },2000); // 2 segundos y desaparece
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
   </script>
  

@@ -1,7 +1,7 @@
 ﻿@model MAGNA_CLIENT.Entities.Employee
 @{
     ViewData["Title"] = "Details Employee";
-    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+    string items = (string)ViewBag.items;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -78,9 +78,9 @@
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (Gender)-->
                             <div class="col-md-6">
-                                 <label asp-for="Gender" class="control-label">Gender</label>
-                                 @Html.DropDownListFor(m => m.Gender.Id, items, new { @class = "form-control" })
-                                 <span asp-validation-for="Gender" class="text-danger"></span>
+                                 <label asp-for="GenderId" class="control-label">Gender</label>
+                                 <input type="text" class="form-control"placeholder=@items readonly />
+                                 <span asp-validation-for="GenderId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (address)-->
                             <div class="col-md-6">

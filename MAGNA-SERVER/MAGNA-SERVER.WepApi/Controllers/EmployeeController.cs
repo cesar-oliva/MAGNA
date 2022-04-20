@@ -77,7 +77,6 @@ namespace MAGNA_SERVER.WebApi.Controllers
         public async Task<IActionResult> Save(RegisterEmployeeRequestDTO employeeDto) 
         {
             Employee employee = _mapper.Map<Employee>(employeeDto);
-            employee.Id = new Guid();
             await _employee.SaveAsync(employee);
             return Ok(employee);
         }

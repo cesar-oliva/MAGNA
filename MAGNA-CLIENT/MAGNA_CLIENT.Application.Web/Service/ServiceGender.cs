@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,9 +20,19 @@ namespace MAGNA_CLIENT.Application.Web.Service
             throw new NotImplementedException();
         }
 
-        public Task<QueryGenderRequestDTO> GetDetailEntity(string nameService, string actionService, Guid Id)
+        public async Task<QueryGenderRequestDTO> GetDetailEntity(string nameService, string actionService, Guid Id)
         {
-            throw new NotImplementedException();
+            QueryGenderRequestDTO genderDTO = new QueryGenderRequestDTO();
+            var clientHttp = _httpClientFactory.CreateClientService(nameService);
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            var request = await clientHttp.GetAsync(actionService + $"/{Id}");
+            if (request.IsSuccessStatusCode)
+            {
+                var resultString = await clientHttp.GetStringAsync(actionService + $"/{Id}");
+                genderDTO = JsonConvert.DeserializeObject<QueryGenderRequestDTO>(resultString);
+                return genderDTO;
+            }
+            return genderDTO;
         }
 
         public async Task<List<QueryGenderRequestDTO>> GetEntity(string nameService, string actionService)

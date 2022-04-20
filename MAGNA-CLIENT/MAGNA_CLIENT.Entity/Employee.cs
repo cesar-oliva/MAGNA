@@ -14,7 +14,7 @@ namespace MAGNA_CLIENT.Entities
         public string EmployeeCode { get; set; }
         public string EmployeeFirstName { get; set; }
         public string EmployeeLastName { get; set; }
-        public Gender Gender { get; set; }
+        public Guid GenderId { get; set; }
         public string EmployeeAddress { get; set; }
         public string EmployeeCountry { get; set; }
         public string EmployeeCity { get; set; }
