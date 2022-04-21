@@ -8,6 +8,7 @@ namespace MAGNA_CLIENT.Entities
 {
     public class NoticeState:Entity
     {
-
+        public string NoticeStateCode { get; set; }
+        public string NoticeStateDescription { get; set; }
     }
 }

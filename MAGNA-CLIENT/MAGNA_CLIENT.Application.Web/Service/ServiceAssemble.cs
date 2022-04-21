@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MAGNA_CLIENT.Application.Web.Service
 {
-    public class ServiceAssembleDTO : ICrudAsync<RegisterAssembleRequestDTO>
+    public class ServiceAssemble : ICrudAsync<RegisterAssembleRequestDTO>
     {
         private readonly IConnectionService _httpClientFactory = new ConnectionService();
 

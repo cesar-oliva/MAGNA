@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using MAGNA_CLIENT.Application.Web.DataTransferObject;
+using MAGNA_CLIENT.Application.Web.DataTransferObject.Notice;
+using MAGNA_CLIENT.Application.Web.DataTransferObject.Object;
 using MAGNA_CLIENT.Entities;
 
 namespace MAGNA_CLIENT.Application.Web.Mapping
@@ -8,21 +10,29 @@ namespace MAGNA_CLIENT.Application.Web.Mapping
     {
         public MappingProfile()
         {
+            //Employee
             CreateMap<RegisterEmployeeRequestDTO, Employee>()
-                .ForMember(x => x.EmployeePhotoUrl,o => o.Ignore()); // ignora el mappeo de esta propiedad
-
+                .ForMember(x => x.EmployeePhotoUrl,o => o.Ignore()); 
             CreateMap<Employee, RegisterEmployeeRequestDTO>();
+            //Assemble
             CreateMap<Assemble, RegisterAssembleRequestDTO>();
-     
             CreateMap<RegisterAssembleRequestDTO, Assemble>();
-  
-            //.ForMember(x => x.EmployeePhotoUrl, o => o.MapFrom(s => s.EmployeePhotoUrl.FileName));
+            //Notice
+            CreateMap<Notice, RegisterNoticeRequestDTO>();
+            CreateMap<RegisterNoticeRequestDTO, Notice>();
+            //NoticePriority
+            CreateMap<NoticePriority, RegisterNoticePriorityRequestDTO>();
+            CreateMap<RegisterNoticePriorityRequestDTO, NoticePriority>();
+            //NoticeCategory
+            CreateMap<NoticeCategory, RegisterNoticeCategoryRequestDTO>();
+            CreateMap<RegisterNoticeCategoryRequestDTO, NoticeCategory>();
+            //NoticeState
+            CreateMap<RegisterNoticeStateRequestDTO, NoticeState>();
+            CreateMap<NoticeState, RegisterNoticeStateRequestDTO>();
+            //NoticeType
+            CreateMap<RegisterNoticeTypeRequestDTO, NoticeType>();
+            CreateMap<NoticeType, RegisterNoticeTypeRequestDTO>();
 
-            // en el caso de que los nombres no coincidan con el DTO - dominio
-            //CreateMap<EmployeeDTO, Employee>()
-            //  .ForMember( d => d.EmployeeFirstName, 
-            //              o => o.MapFrom(
-            //              s => s.PrimerNombre));
 
         }
     }

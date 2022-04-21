@@ -1,91 +1,116 @@
-﻿@model MAGNA_CLIENT.Entities.Notice
+﻿@model IEnumerable<MAGNA_CLIENT.Entities.Notice>
 @{
     ViewBag.Title = "Create";
     ViewData["Title"] = "Create New Notice";
-    List<SelectListItem> priority = (List<SelectListItem>)ViewBag.Priority;
-    List<SelectListItem> category = (List<SelectListItem>)ViewBag.Category;
-    List<SelectListItem> state = (List<SelectListItem>)ViewBag.State;
+    List<SelectListItem> priority = (List<SelectListItem>)ViewBag.noticePriority;
+    List<SelectListItem> category = (List<SelectListItem>)ViewBag.noticeCategory;
+    List<SelectListItem> state = (List<SelectListItem>)ViewBag.noticeState;
+    List<SelectListItem> type = (List<SelectListItem>)ViewBag.noticeType;
     Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
-<div class="container">
 
-    <div class="row">
-        <div class="col-sm-6">
-            <h3>Create New Notice</h3>
-        </div>
-    </div>
- </div>
- <!--breadcrumb-->
+<!--breadcrumb-->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
     <li class="breadcrumb-item"><a href='/Notice'>Notice</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create</li>
+    <li class="breadcrumb-item active" aria-current="page">/ Index</li>
   </ol>
 </nav>
-<div class="container-xl px-4 mt-4">
-    <hr class="mt-0 mb-4">
-    <div class="row">
-        <div class="col-xl-8">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Notice Details</div>
-                <div class="card-body">
-                    <!--<form method="post" enctype= "multipart/form-data" asp-action="Create">-->
-                    <form asp-action="Create" asp-controller="Notice" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <!-- Form Group (username)-->
-                        <div class="mb-3">
-                            <label asp-for="NoticeCode" class="control-label">Code</label>
-                            <input asp-for="NoticeCode" class="form-control" placeholder="Enter Code" />
-                            <span asp-validation-for="NoticeCode" class="text-danger"></span>
-                        </div>
-                        <!-- Form Group (Notice date)-->
-                            <div class="col-md-6">
-                                <label asp-for="NoticeDate" class="control-label">Date</label>
-                                <input type="date" asp-for="NoticeDate" class="form-control"placeholder="Enter date" />
-                                <span asp-validation-for="NoticeDate" class="text-danger"></span>
-                            </div>
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (Notice Description)-->
-                            <div class="col-md-6">
-                                 <label asp-for="NoticeDescription" class="control-label">Description</label>
-                                 <input asp-for="NoticeDescription" class="form-control"placeholder="Enter description" />
-                                 <span asp-validation-for="NoticeDescription" class="text-danger"></span>
-                            </div>
-                              <!-- Form Group (Notice Priority)-->
-                            <div class="col-md-6">
-                                 <label asp-for="NoticePriority" class="control-label">Priority</label>
-                                 @Html.DropDownListFor(m => m.NoticePriority.Id, priority, new { @class = "form-control" })
-                                 <span asp-validation-for="NoticePriority" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (Notice Priority)-->
-                            <div class="col-md-6">
-                                 <label asp-for="NoticePriority" class="control-label">Priority</label>
-                                 @Html.DropDownListFor(m => m.NoticePriority.Id, priority, new { @class = "form-control" })
-                                 <span asp-validation-for="NoticePriority" class="text-danger"></span>
-                            </div>
-                    
-                        <!-- Save changes button-->
-                        <div class="col-md-1">
-                            <div class="form-group">
-                            <input type="submit" value="Create Employee" class="btn btn-primary" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+@if (TempData["mensaje_create"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            @TempData["mensaje_create"]
         </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-</div>
-
-@section Scripts{ 
-    @{<partial name="_ValidationScriptspartial"/> }
+}
+@if (TempData["mensaje_update"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            @TempData["mensaje_update"]
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+@if (TempData["mensaje_delete"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            @TempData["mensaje_delete"]
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 }
 
- 
+<div class="row">
+        <div class="col-sm-6">
+            <h3>Notice List</h3>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="Notice">Add New Notice</a>
+        </div>
+</div>
+<div class="row">
+        @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">State</th>
+
+                </tr>
+            </thead>
+            <tbody id="myTable"> 
+                @foreach (var notice in Model)
+                {
+                    <tr>
+                        <td>@notice.NoticeCode</td>
+                        <td>@notice.NoticeDescription</td>
+                        <td>@notice.NoticeDate</td>
+                        <td>@notice.NoticePriority</td>
+                        <td>@notice.NoticeState</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="basic outlined example">
+                                <a asp-controller="Notice" asp-action="Update" asp-route-id="@notice.Id" type="button" class="btn col-6 mx-auto btn-outline-warning">Update</a>
+                                <a asp-controller="Notice" asp-action="Delete" asp-route-id="@notice.Id" type="button" class="btn col-6 mx-auto btn-outline-danger">Delete</a>
+                                <a asp-controller="Notice" asp-action="Detail" asp-route-id="@notice.Id" type="button" class="btn col-6 mx-auto btn-outline-danger">Detail</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                } 
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>There are no records</p>
+    }
+  </div>
+
+ @section Scripts{ 
+    @{<partial name="_ValidationScriptspartial"/> }
+}

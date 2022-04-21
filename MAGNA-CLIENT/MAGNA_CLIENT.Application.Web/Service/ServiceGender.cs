@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MAGNA_CLIENT.Application.Web.Service
 {
-    public class ServiceGender : ICrudAsync<QueryGenderRequestDTO>
+    public class ServiceGender : ICrudAsync<GenderObjectRequestDTO>
     {
         private readonly IConnectionService _httpClientFactory = new ConnectionService();
 
@@ -20,45 +20,45 @@ namespace MAGNA_CLIENT.Application.Web.Service
             throw new NotImplementedException();
         }
 
-        public async Task<QueryGenderRequestDTO> GetDetailEntity(string nameService, string actionService, Guid Id)
+        public async Task<GenderObjectRequestDTO> GetDetailEntity(string nameService, string actionService, Guid Id)
         {
-            QueryGenderRequestDTO genderDTO = new QueryGenderRequestDTO();
+            GenderObjectRequestDTO genderDTO = new GenderObjectRequestDTO();
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.GetAsync(actionService + $"/{Id}");
             if (request.IsSuccessStatusCode)
             {
                 var resultString = await clientHttp.GetStringAsync(actionService + $"/{Id}");
-                genderDTO = JsonConvert.DeserializeObject<QueryGenderRequestDTO>(resultString);
+                genderDTO = JsonConvert.DeserializeObject<GenderObjectRequestDTO>(resultString);
                 return genderDTO;
             }
             return genderDTO;
         }
 
-        public async Task<List<QueryGenderRequestDTO>> GetEntity(string nameService, string actionService)
+        public async Task<List<GenderObjectRequestDTO>> GetEntity(string nameService, string actionService)
         {
-            List<QueryGenderRequestDTO> genderList = new();
+            List<GenderObjectRequestDTO> genderList = new();
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
             var request = await clientHttp.GetAsync(actionService);
             if (request.IsSuccessStatusCode)
             {
                 var resultString = await clientHttp.GetStringAsync(actionService);
-                genderList = JsonConvert.DeserializeObject<List<QueryGenderRequestDTO>>(resultString);
+                genderList = JsonConvert.DeserializeObject<List<GenderObjectRequestDTO>>(resultString);
             }
             return genderList;
         }
 
-        public Task<QueryGenderRequestDTO> GetUpdateEntity(string nameService, string actionService, Guid Id)
+        public Task<GenderObjectRequestDTO> GetUpdateEntity(string nameService, string actionService, Guid Id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> PostCreateEntity(string nameService, string actionService, QueryGenderRequestDTO Entity)
+        public Task<bool> PostCreateEntity(string nameService, string actionService, GenderObjectRequestDTO Entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> PutUpdateEntity(string nameService, string actionService, QueryGenderRequestDTO Entity)
+        public Task<bool> PutUpdateEntity(string nameService, string actionService, GenderObjectRequestDTO Entity)
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MAGNA_CLIENT.Application.Web.DataTransferObject
 {
-    public class QueryGenderRequestDTO
+    public class GenderObjectRequestDTO
     {
         [Key]
         public Guid Id { get; set; }

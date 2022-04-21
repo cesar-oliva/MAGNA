@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MAGNA_CLIENT.Application.Web.Service
 {
-    public class ServiceAuthUserDTO 
+    public class ServiceAuthUser 
     {
         private readonly IConnectionService _httpClientFactory = new ConnectionService();
         static string _token = string.Empty;   

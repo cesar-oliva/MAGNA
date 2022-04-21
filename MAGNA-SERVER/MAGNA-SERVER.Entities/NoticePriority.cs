@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MAGNA_SERVER.Entities
 {
-    public enum NoticePriority 
+    public class NoticePriority : Entity 
     {
-        LOW = 0,
-        MEAN = 1,
-        HIGH = 2,
-        URGENT = 3
+        public string NoticePriorityDescription { get; set; }
+        public bool NoticePriorityState { get; set; }
     }
 }
+
+   

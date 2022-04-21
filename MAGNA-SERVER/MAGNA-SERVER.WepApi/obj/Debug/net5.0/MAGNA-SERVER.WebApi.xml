@@ -229,6 +229,22 @@
             <response code="200"> OK. returns the requested object </response>
             <response code="400"> NotFound. returns the requested object was not found </response>
         </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeCategoryController.#ctor(MAGNA_SERVER.Application.IApplication{MAGNA_SERVER.Entities.NoticeCategory},AutoMapper.IMapper)">
+            <summary>
+            receives by parameter the application in Notice category and we inject it
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <param name="noticeCategory"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeCategoryController.Get">
+            <summary>
+            get a list of notice category objects
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeController.#ctor(MAGNA_SERVER.Application.IApplication{MAGNA_SERVER.Entities.Notice},AutoMapper.IMapper)">
             <summary>
             receives by parameter the application in Notice and we inject it
@@ -280,6 +296,54 @@
             <returns>response object</returns>
             <response code="200"> OK. returns the requested object </response>
             <response code="400"> NotFound. returns the requested object was not found </response>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticePriorityController.#ctor(MAGNA_SERVER.Application.IApplication{MAGNA_SERVER.Entities.NoticePriority},AutoMapper.IMapper)">
+            <summary>
+            receives by parameter the application in Notice Priority and we inject it
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <param name="noticePriority"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticePriorityController.Get">
+            <summary>
+            get a list of notice priority objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeStateController.#ctor(MAGNA_SERVER.Application.IApplication{MAGNA_SERVER.Entities.NoticeState},AutoMapper.IMapper)">
+            <summary>
+            receives by parameter the application in Notice State and we inject it
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <param name="noticeState"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeStateController.Get">
+            <summary>
+            get a list of notice state objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeTypeController.#ctor(MAGNA_SERVER.Application.IApplication{MAGNA_SERVER.Entities.NoticeType},AutoMapper.IMapper)">
+            <summary>
+            receives by parameter the application in Notice Type and we inject it
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <param name="noticeType"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.NoticeTypeController.Get">
+            <summary>
+            get a list of notice type objects
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:MAGNA_SERVER.WebApi.DataTransferObject.RegisterUserRequestDTO">
             <summary>

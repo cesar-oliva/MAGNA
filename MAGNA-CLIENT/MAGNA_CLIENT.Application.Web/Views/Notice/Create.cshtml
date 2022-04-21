@@ -1,0 +1,138 @@
+﻿@model MAGNA_CLIENT.Entities.Notice
+@{
+    ViewBag.Title = "Create";
+    ViewData["Title"] = "Create New Notice";
+    List<SelectListItem> priority = (List<SelectListItem>)ViewBag.noticePriority;
+    List<SelectListItem> category = (List<SelectListItem>)ViewBag.noticeCategory;
+    List<SelectListItem> employee = (List<SelectListItem>)ViewBag.employee;
+    List<SelectListItem> assemble = (List<SelectListItem>)ViewBag.assemble;
+    List<SelectListItem> state = (List<SelectListItem>)ViewBag.noticeState;
+    List<SelectListItem> type = (List<SelectListItem>)ViewBag.noticeType;
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+<html>
+
+    <div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Create New Notice</h3>
+        </div>
+    </div>
+ </div>
+ <!--breadcrumb-->
+ <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
+    <li class="breadcrumb-item"><a href='/Notice'>Notice</a></li>
+    <li class="breadcrumb-item active" aria-current="page">/ Create</li>
+  </ol>
+</nav>
+<div class="container-xl px-4 mt-4">
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Notice Details</div>
+                <div class="card-body">
+                    <!--<form method="post" enctype= "multipart/form-data" asp-action="Create">-->
+                    <form asp-action="Create" asp-controller="Notice" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <!-- Form Row -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group-->
+                            <div class="col-md-6">
+                                 <label asp-for="NoticeDescription" class="control-label">Title</label>
+                                 <input asp-for="NoticeDescription" class="form-control" placeholder="Enter description" />
+                                 <span asp-validation-for="NoticeDescription" class="text-danger"></span>
+                            </div>
+                           <div class="col-md-6">
+                                 <label asp-for="Employee" class="control-label">Employee</label>
+                                 @Html.DropDownListFor(m => m.Employee.EmployeeFirstName, employee, new { @class = "form-control" })
+                                 <span asp-validation-for="Employee" class="text-danger"></span>
+                           </div>
+                           <div class="col-md-6">
+                                 <label asp-for="NoticePriority" class="control-label">Execution Priority</label>
+                                 @Html.DropDownListFor(m => m.NoticePriority.NoticePriorityDescription, priority, new { @class = "form-control" })
+                                 <span asp-validation-for="NoticePriority" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                 <label asp-for="NoticeState" class="control-label">Notice State</label>
+                                 @Html.DropDownListFor(m => m.NoticeState.NoticeStateDescription, state, new { @class = "form-control" })
+                                 <span asp-validation-for="NoticeState" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Form Row -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group-->
+                            <div class="col-md-6">
+                                 <label asp-for="NoticeCategory" class="control-label">Category</label>
+                                 @Html.DropDownListFor(m => m.NoticeCategory.NoticeCategoryDescription, category, new { @class = "form-control" })
+                                 <span asp-validation-for="NoticeCategory" class="text-danger"></span>
+                            </div>
+                              <div class="col-md-6">
+                                 <label asp-for="NoticeType" class="control-label">Notice Type</label>
+                                 @Html.DropDownListFor(m => m.NoticeType.NoticeTypeDescription, type, new { @class = "form-control" })
+                                 <span asp-validation-for="NoticeType" class="text-danger"></span>
+                           </div>
+                        </div>
+                        <!-- Form Row -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group-->
+                            <div class="col-md-6">
+                                 <label asp-for="Assemble" class="control-label">Broken Assemble</label>
+                                 @Html.DropDownListFor(m => m.Assemble.AssembleDescription, assemble, new { @class = "form-control" })
+                                 <span asp-validation-for="Assemble" class="text-danger"></span>
+                            </div>
+                           <div class="col-md-6">
+                                 <label asp-for="TechnicalLocation" class="control-label">Technical Location</label>
+                                 @Html.DropDownListFor(m => m.TechnicalLocation, priority, new { @class = "form-control" })
+                                 <span asp-validation-for="TechnicalLocation" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Form Row -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group-->
+                            <div class="col-md-6">
+                                 <label asp-for="FaultType" class="control-label">Fault Type</label>
+                                 @Html.DropDownListFor(m => m.FaultType, priority, new { @class = "form-control" })
+                                 <span asp-validation-for="FaultType" class="text-danger"></span>
+                            </div>
+                            @*<div class="mb-3">
+                                <label asp-for="" class="control-label"></label>
+                                <input asp-for="EmployeeCode" class="form-control" placeholder="Enter Code" />
+                                <span asp-validation-for="EmployeeCode" class="text-danger"></span>
+                            </div>*@
+                        </div>
+                         <!-- Form Row -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group-->
+                           <div class="col-md-12">
+                                 <label asp-for="FaultDescription" class="control-label">Fault Description</label>
+                                 <textarea asp-for="FaultDescription" class="form-control" placeholder="Enter Fualt Description"></textarea>
+                                 <span asp-validation-for="FaultDescription" class="text-danger"></span>
+                           </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <div class="col-md-1">
+                            <div class="form-group">
+                            <input type="submit" value="Create Notice" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    @{<partial name="_ValidationScriptspartial"/> }
+}
+
+
+
+</html>

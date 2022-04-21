@@ -8,6 +8,7 @@ namespace MAGNA_CLIENT.Entities
 {
     public class NoticeCategory:Entity
     {
-
+        public string NoticeCategoryCode { get; set; }
+        public string NoticeCategoryDescription { get; set; }
     }
 }

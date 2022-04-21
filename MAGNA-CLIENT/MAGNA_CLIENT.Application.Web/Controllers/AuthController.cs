@@ -17,7 +17,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
     {
         const string nameService = "https://localhost:5001/";
         const string serviceGetEmployee = "api/Auth/Login";
-        private ServiceAuthUserDTO con = new ServiceAuthUserDTO();
+        private ServiceAuthUser con = new ServiceAuthUser();
         private readonly IMapper _mapper;
         public AuthController(IMapper mapper)
         {

@@ -20,8 +20,8 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         const string serviceGetEmployee = "api/Employee";
         const string serviceGetGender = "api/Gender";
 
-        private readonly ICrudAsync<RegisterEmployeeRequestDTO> con = new ServiceEmployeeDTO();
-        private readonly ICrudAsync<QueryGenderRequestDTO> cong = new ServiceGender();
+        private readonly ICrudAsync<RegisterEmployeeRequestDTO> con = new ServiceEmployee();
+        private readonly ICrudAsync<GenderObjectRequestDTO> cong = new ServiceGender();
         private readonly IMapper _mapper;
         public EmployeeController(IMapper mapper)
         {

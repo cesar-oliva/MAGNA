@@ -289,8 +289,8 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Property<string>("NoticeDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NoticePriority")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("NoticePriorityId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("NoticeStateId")
                         .HasColumnType("uniqueidentifier");
@@ -306,6 +306,8 @@ namespace MAGNA_SERVER.DataAccess.Migrations
 
                     b.HasIndex("NoticeCategoryId");
 
+                    b.HasIndex("NoticePriorityId");
+
                     b.HasIndex("NoticeStateId");
 
                     b.ToTable("Notice");
@@ -320,9 +322,29 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Property<string>("NoticeCategoryDescription")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("NoticeCategoryState")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("NoticeCategory");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.NoticePriority", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("NoticePriorityDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("NoticePriorityState")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NoticePriority");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.NoticeState", b =>
@@ -340,6 +362,23 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("NoticeState");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.NoticeType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("NoticeTypeCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NoticeTypeDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NoticeType");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.Sector", b =>
@@ -690,6 +729,10 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                         .WithMany()
                         .HasForeignKey("NoticeCategoryId");
 
+                    b.HasOne("MAGNA_SERVER.Entities.NoticePriority", "NoticePriority")
+                        .WithMany()
+                        .HasForeignKey("NoticePriorityId");
+
                     b.HasOne("MAGNA_SERVER.Entities.NoticeState", "NoticeState")
                         .WithMany()
                         .HasForeignKey("NoticeStateId");
@@ -699,6 +742,8 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("NoticeCategory");
+
+                    b.Navigation("NoticePriority");
 
                     b.Navigation("NoticeState");
                 });

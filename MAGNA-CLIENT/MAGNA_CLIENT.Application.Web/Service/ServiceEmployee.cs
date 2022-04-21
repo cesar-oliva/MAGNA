@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MAGNA_CLIENT.Application.Web.Service
 {
-    public class ServiceEmployeeDTO : ICrudAsync<RegisterEmployeeRequestDTO>
+    public class ServiceEmployee : ICrudAsync<RegisterEmployeeRequestDTO>
     {
         private readonly IConnectionService _httpClientFactory = new ConnectionService();
 
@@ -21,7 +21,7 @@ namespace MAGNA_CLIENT.Application.Web.Service
         {
             List<RegisterEmployeeRequestDTO> employeeDTOList = new();       
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.GetAsync(actionService);
             if (request.IsSuccessStatusCode)
             {
@@ -34,7 +34,7 @@ namespace MAGNA_CLIENT.Application.Web.Service
         public async Task<bool> PostCreateEntity(string nameService, string actionService, RegisterEmployeeRequestDTO Entity)
         {
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.PostAsync(actionService, Entity, new JsonMediaTypeFormatter());
             if (request.IsSuccessStatusCode)
             {
@@ -46,7 +46,7 @@ namespace MAGNA_CLIENT.Application.Web.Service
         {
             RegisterEmployeeRequestDTO employeeDTO = new RegisterEmployeeRequestDTO();
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.GetAsync(actionService + $"/{Id}");
             if (request.IsSuccessStatusCode)
             {
@@ -59,7 +59,7 @@ namespace MAGNA_CLIENT.Application.Web.Service
         public async Task<bool> PutUpdateEntity(string nameService, string actionService, RegisterEmployeeRequestDTO Entity)
         {
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.PutAsync(actionService + $"/{Entity.Id}", Entity, new JsonMediaTypeFormatter());
             if (request.IsSuccessStatusCode)
             {
@@ -70,7 +70,7 @@ namespace MAGNA_CLIENT.Application.Web.Service
         public async Task<bool> GetDeleteEntity(string nameService, string actionService, Guid Id)
         {
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.DeleteAsync(actionService + $"/{Id}");
             if (request.IsSuccessStatusCode)
             {
@@ -82,7 +82,7 @@ namespace MAGNA_CLIENT.Application.Web.Service
         {
             RegisterEmployeeRequestDTO employeeDTO = new RegisterEmployeeRequestDTO();
             var clientHttp = _httpClientFactory.CreateClientService(nameService);
-            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUserDTO.GetToken()); //recupero el token y lo envio
+            clientHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", ServiceAuthUser.GetToken()); //recupero el token y lo envio
             var request = await clientHttp.GetAsync(actionService + $"/{Id}");
             if (request.IsSuccessStatusCode)
             {

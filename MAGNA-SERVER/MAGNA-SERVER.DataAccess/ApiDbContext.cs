@@ -24,7 +24,9 @@ namespace MAGNA_SERVER.DataAccess
         public DbSet<Departament> Departament { get; set; }
         public DbSet<Sector> Sector { get; set; }
         public DbSet<Notice> Notice { get; set; }
+        public DbSet<NoticePriority> NoticePriority { get; set; }
         public DbSet<NoticeCategory> NoticeCategory { get; set; }
+        public DbSet<NoticeType> NoticeType { get; set; }
         public DbSet<NoticeState> NoticeState { get; set; }
         public DbSet<WorkOrder> WorkOrder { get; set; }
         public DbSet<WorkOrderState> WorkOrderState { get; set; }

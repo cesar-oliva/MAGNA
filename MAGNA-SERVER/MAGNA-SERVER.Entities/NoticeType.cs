@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace MAGNA_SERVER.Entities
 {
-    public enum NoticeType
+    public class NoticeType:Entity
     {
-        Tarjeta_Blanca = 0,
-        Tarjeta_Roja = 1,
-        Tarjeta_Azul = 2,
-        Tarjeta_Amarilla = 3,
-        Parada_de_Planta = 4,
-        Aviso_de_Averia = 5,
-        Aviso_de_actividad = 6,
-        Pequeños_paros = 7,
-        Fallos = 8
+        public string NoticeTypeCode { get; set; }
+        public string NoticeTypeDescription { get; set; }
     }
 }
+
+
+/*
+    White Card  WC,
+    Red Card  RC,
+    Blue Card BC,
+    Yellow Card YC,
+    Plant Shutdown PS,
+    Fault Notice FN,
+    Activity Notice AN,
+    Small Stops SS,
+    Other Bugs OB 
+ */

@@ -17,8 +17,8 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         const string nameService = "https://localhost:5001/";
         const string serviceGetAssemble= "api/Assemble";
         const string serviceGetAssembleType = "api/AssembleType";
-        private readonly ICrudAsync<RegisterAssembleRequestDTO> con = new ServiceAssembleDTO();
-        private readonly ICrudAsync<RegisterAssembleTypeRequestDTO> cont = new ServiceAssembleTypeDTO();
+        private readonly ICrudAsync<RegisterAssembleRequestDTO> con = new ServiceAssemble();
+        private readonly ICrudAsync<RegisterAssembleTypeRequestDTO> cont = new ServiceAssembleType();
         private readonly IMapper _mapper;
         public AssembleController(IMapper mapper)
         {

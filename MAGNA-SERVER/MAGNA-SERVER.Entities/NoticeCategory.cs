@@ -9,5 +9,6 @@ namespace MAGNA_SERVER.Entities
     public class NoticeCategory : Entity
     {
         public string NoticeCategoryDescription { get; set; }
+        public bool NoticeCategoryState { get; set; }
     }
 }

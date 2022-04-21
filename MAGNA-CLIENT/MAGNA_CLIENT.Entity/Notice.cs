@@ -11,8 +11,9 @@ namespace MAGNA_CLIENT.Entities
     {
         public string NoticeCode { get; set; }
         public string NoticeDescription { get; set; }
+        public virtual NoticeType NoticeType { get; set; }
         public DateTime NoticeDate { get; set; }
-        public NoticePriority NoticePriority { get; set; }
+        public virtual NoticePriority NoticePriority { get; set; }
         public string FaultType { get; set; }
         public string TechnicalLocation { get; set; }
         public string AffectedPart { get; set; }
