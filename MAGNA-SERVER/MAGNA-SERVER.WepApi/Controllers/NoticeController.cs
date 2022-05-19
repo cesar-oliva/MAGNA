@@ -2,6 +2,8 @@
 using MAGNA_SERVER.Application;
 using MAGNA_SERVER.Entities;
 using MAGNA_SERVER.WebApi.DataTransferObject;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,9 @@ using System.Web.Http.Description;
 
 namespace MAGNA_SERVER.WebApi.Controllers
 {
+    /*Guarantees that the entire controller will ask for authorization*/
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     [Route("api/[controller]")]
     [ApiController]
     public class NoticeController : Controller

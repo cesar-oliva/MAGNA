@@ -3,7 +3,7 @@
 :root {
     --header-height: 3rem;
     --nav-width: 68px;
-    --first-color: #304AD0;
+    --first-color: #1E4AAA;
     --first-color-light: #12D68C;
     --white-color: #F7F6FB;
     --body-font: 'Nunito', sans-serif;
@@ -20,7 +20,7 @@
 body {
     position: relative;
     margin: var(--header-height) 0 0 0;
-    padding: 0 1rem;
+    padding: 60px 1rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     transition: .5s
@@ -39,7 +39,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 10rem;
     background-color: var(--white-color);
     z-index: var(--z-fixed);
     transition: .5s
@@ -60,9 +60,9 @@ a {
     overflow: hidden
 }
 
-    .header_img img {
-        width: 40px
-    }
+.header_img img {
+width: 40px
+}
 
 .l-navbar {
     position: fixed;
@@ -126,9 +126,6 @@ a {
     left: 0
 }
 
-.body-pd {
-    padding-left: calc(var(--nav-width) + 1rem)
-}
 
 .active {
     color: var(--white-color)
@@ -148,14 +145,17 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+
     body {
-        margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 2rem)
+        margin: calc(var(--header-height) 1 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width));
+        padding-right: calc(var(--nav-width)-1px)
     }
+        
 
     .header {
         height: calc(var(--header-height) + 1rem);
-        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+        padding: 0 1rem 0 calc(var(--nav-width) + 2rem)
     }
 
     .header_img {
@@ -177,6 +177,8 @@ a {
     }
 
     .body-pd {
-        padding-left: calc(var(--nav-width) + 188px)
+        padding-left: calc(var(--nav-width) + 155px) ;
+
     }
+    
 }

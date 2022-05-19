@@ -6,25 +6,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
-<div class="container">
 
+<div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <h3>Create New Employee</h3>
         </div>
     </div>
- </div>
- <!--breadcrumb-->
- <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
-    <li class="breadcrumb-item"><a href='/Employee'>Employee</a></li>
-    <li class="breadcrumb-item active" aria-current="page">/ Create</li>
-  </ol>
-</nav>
+    <!--breadcrumb-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
+                        <li class="breadcrumb-item"><a href='/Employee'>Employee</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">/ Create</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div
+</div>
+
+   
 <div class="container-xl px-4 mt-4">
     <hr class="mt-0 mb-4">
     <div class="row">
+
         <div class="col-xl-4">
             <!-- Profile picture card-->
             <div class="card mb-4 mb-xl-0">
@@ -40,12 +49,13 @@
                         </div>
                         <span asp-validation-for="EmployeePhotoUrl" class="text-danger"></span>
                     </div>
-                    <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <!-- Profile picture upload button-->
+                <!-- Profile picture help block-->
+                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                <!-- Profile picture upload button-->
                 </div>
             </div>
         </div>
+
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
@@ -60,7 +70,6 @@
                             <input asp-for="EmployeeCode" class="form-control" placeholder="Enter Code" />
                             <span asp-validation-for="EmployeeCode" class="text-danger"></span>
                         </div>
-                   
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (first name)-->
@@ -71,18 +80,18 @@
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
-                                 <label asp-for="EmployeeLastName" class="control-label">Last Name</label>
-                                 <input asp-for="EmployeeLastName" class="form-control"placeholder="Enter last name" />
-                                 <span asp-validation-for="EmployeeLastName" class="text-danger"></span>
+                                    <label asp-for="EmployeeLastName" class="control-label">Last Name</label>
+                                    <input asp-for="EmployeeLastName" class="form-control"placeholder="Enter last name" />
+                                    <span asp-validation-for="EmployeeLastName" class="text-danger"></span>
                             </div>
                         </div>
-                        <!-- Form Row        -->
+                        <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (Gender)-->
                             <div class="col-md-6">
-                                 <label asp-for="GenderId" class="control-label">Gender</label>
-                                 @Html.DropDownListFor(m => m.GenderId, items, new { @class = "form-control" })
-                                 <span asp-validation-for="GenderId" class="text-danger"></span>
+                                    <label asp-for="GenderId" class="control-label">Gender</label>
+                                    @Html.DropDownListFor(m => m.GenderId, items, new { @class = "form-control" })
+                                    <span asp-validation-for="GenderId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (address)-->
                             <div class="col-md-6">
@@ -90,25 +99,31 @@
                                 <input asp-for="EmployeeAddress" class="form-control"  placeholder="Enter Address"/>
                                 <span asp-validation-for="EmployeeAddress" class="text-danger"></span>
                             </div>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeeCountry" class="control-label">Country</label>
                                 <input asp-for="EmployeeCountry" class="form-control"  placeholder="Enter location"/>
                                 <span asp-validation-for="EmployeeCountry" class="text-danger"></span>
                             </div>
-                               <!-- Form Group (City)-->
+                                <!-- Form Group (City)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeeCity" class="control-label">City</label>
                                 <input asp-for="EmployeeCity" class="form-control" placeholder="Enter City" />
                                 <span asp-validation-for="EmployeeCity" class="text-danger"></span>
                             </div>
-                             <!-- Form Group (birthday)-->
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                                <!-- Form Group (birthday)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeeBirthday" class="control-label">Birthday</label>
                                 <input type="date" asp-for="EmployeeBirthday" class="form-control"  placeholder="Enter birthday"/>
                                 <span asp-validation-for="EmployeeBirthday" class="text-danger"></span>
                             </div>
-                             <!-- Form Group (phone number)-->
+                                <!-- Form Group (phone number)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeePhoneNumber" class="control-label">Phone Number</label>
                                 <input asp-for="EmployeePhoneNumber" class="form-control"  placeholder="Enter phone number" />
@@ -132,27 +147,14 @@
                             <!-- Form Group (End Date)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeeEndDate" class="control-label">End Date</label>
-                                <input type="date" asp-for="EmployeeEndDate" class="form-control" placeholder="Enter End Date" />
+                                <input type="date" asp-for="EmployeeEndDate" class="form-control" placeholder="Enter End Date" readonly/>
                                 <span asp-validation-for="EmployeeEndDate" class="text-danger"></span>
                             </div>
-                            <!-- Form Group (PhotoUrl)-->
-                           @* @using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                             {
-                                  
-                            </div>*@
-                            <div class="col-md-12">
-                                <label asp-for="EmployeePhotoUrl" class="control-label">Photo Url</label>
-                                <div class="custom-file">
-                                    <input asp-for="EmployeePhotoUrl" class="custom-file-input" id="customFile" readonly/>
-                                    <label class ="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                            <span asp-validation-for="EmployeePhotoUrl" class="text-danger"></span>                            
-                            </div>
+                        </div> 
                         <!-- Save changes button-->
-                        <div class="col-md-1">
-                            <div class="form-group">
-                            <input type="submit" value="Create Employee" class="btn btn-primary" />
-                            </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <input type="submit" value="Create Employee" class="btn btn-outline-primary  btn-lg" /> 
+                            <input type="submit" value="Return Page" class="btn btn-outline-secondary btn-lg" onClick="history.go(-1);"> 
                         </div>
                     </form>
                 </div>
@@ -164,3 +166,10 @@
 @section Scripts{ 
     @{<partial name="_ValidationScriptspartial"/> }
 }
+
+
+
+
+
+
+

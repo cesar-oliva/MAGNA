@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MAGNA_CLIENT.Entities
 {
-    public class AssembleVersion
+    public class AssembleVersion:Entity
     {
         public string AssembleLocation { get; set; }
         public string AssembleMaker { get; set; }

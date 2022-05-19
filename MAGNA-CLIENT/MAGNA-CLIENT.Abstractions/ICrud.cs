@@ -17,6 +17,14 @@ namespace MAGNA_CLIENT.Abstractions
         Task<bool> GetDeleteEntity(string nameService, string actionService, Guid Id);
         Task<T> GetDetailEntity(string nameService, string actionService, Guid Id);
     }
+    public interface ICrud<T>
+    {
+        T Save(T entity);
+        T Update(T entity);
+        IList<T> GetAll();
+        T GetById(Guid id);
+        void Delete(Guid id);
+    }
 }
   
 

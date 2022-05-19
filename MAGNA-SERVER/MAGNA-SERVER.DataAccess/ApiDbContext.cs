@@ -17,8 +17,9 @@ namespace MAGNA_SERVER.DataAccess
         ///that they persist
         /// </summary>
         public DbSet<Assemble> Assemble { get; set; }
-        public DbSet<AssembleVersion> AssembleVersion { get; set; }
+        public DbSet<SubAssemble> AssembleVersion { get; set; }
         public DbSet<AssembleType> AssembleType { get; set; }
+        public DbSet<AssembleProperty> AssembleProperty{ get; set; }
         public DbSet<Employee> Employee { get; set; }
         public DbSet<Area> Area { get; set; }
         public DbSet<Departament> Departament { get; set; }
@@ -31,7 +32,7 @@ namespace MAGNA_SERVER.DataAccess
         public DbSet<WorkOrder> WorkOrder { get; set; }
         public DbSet<WorkOrderState> WorkOrderState { get; set; }
         public DbSet<Gender> Gender { get; set; }
-        
+        public DbSet<TechnicalLocation> TechnicalLocation { get; set; }
         /// <summary>
         /// builder apiDbContext
         /// </summary>
@@ -43,10 +44,15 @@ namespace MAGNA_SERVER.DataAccess
         /// <param name="options"></param>
         public ApiDbContext(DbContextOptions<ApiDbContext> options): base(options)
         {
-
-
+           
+            
         }
-       
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data Source = .;Initial Catalog = BD_MAGNA_TEST; Integrated Security=true;")
+                .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
+            base.OnConfiguring(optionsBuilder);
+        }       
         /// <summary>
         /// override OModelCreating
         /// </summary>
@@ -59,8 +65,11 @@ namespace MAGNA_SERVER.DataAccess
         {
             modelBuilder.Ignore<Entity>();     
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.ApplyConfiguration(new EmployeeConfigurations());
-            //modelBuilder.ApplyConfiguration(new GenderConfigurations());
+
+          
+            
+
+
 
         }
     }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MAGNA_CLIENT.Entities
 {
-    public class AssembleType
+    public class AssembleType:Entity
     {
-        public Guid Id { get; set; }
         public string AssembleTypeCode { get; set; }
         public string AssembleTypeDescription { get; set; }
     }

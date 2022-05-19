@@ -46,7 +46,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.items = await GetGenderList(); ;
+            ViewBag.items = await GetGenderList(); 
             return View();
         }
         [HttpPost]
@@ -100,13 +100,19 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(Guid id)
         {
-            if (id == null || id.Equals(Guid.Empty))
+            if (id == null)
             {
                 return NotFound();
             }
-            var employeeDTO = await con.GetUpdateEntity(nameService, serviceGetEmployee,id);
-            var result = _mapper.Map<Employee>(employeeDTO);
-            return View(result);
+            var employeeDTO = await con.GetDetailEntity(nameService, serviceGetEmployee, id);
+            var genderDTOList = await cong.GetEntity(nameService, serviceGetGender);
+            foreach (var item in genderDTOList)
+            {
+                if (item.Id.Equals(employeeDTO.GenderId))
+                    ViewBag.items = item.GenderDescription;
+            }
+            var employee = _mapper.Map<Employee>(employeeDTO);
+            return View(employee);
         }
 
         [HttpPost]
@@ -141,6 +147,12 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
             }
             var employee = _mapper.Map<Employee>(employeeDTO);
             return View(employee);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Detail(Employee employee)
+        {
+            return RedirectToAction("Index");
         }
 
         public async Task<List<SelectListItem>> GetGenderList()

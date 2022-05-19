@@ -32,6 +32,9 @@ namespace MAGNA_CLIENT.Application.Web.Mapping
             //NoticeType
             CreateMap<RegisterNoticeTypeRequestDTO, NoticeType>();
             CreateMap<NoticeType, RegisterNoticeTypeRequestDTO>();
+            //TechnicalLocation
+            CreateMap<RegisterTechnicalLocationRequestDTO, TechnicalLocation>();
+            CreateMap<TechnicalLocation, RegisterTechnicalLocationRequestDTO>();
 
 
         }

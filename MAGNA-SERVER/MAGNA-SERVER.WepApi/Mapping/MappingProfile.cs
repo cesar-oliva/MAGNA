@@ -16,8 +16,12 @@ namespace MAGNA_SERVER.WebApi.Mapping
             CreateMap<AssembleType, RegisterAssembleTypeRequestDTO>();
             CreateMap<RegisterAssembleTypeRequestDTO,AssembleType >();
             //Assemble
-            CreateMap<RegisterAssembleRequestDTO, Assemble>();
+            CreateMap<RegisterAssembleRequestDTO, Assemble>()
+            .ForMember(c => c.AssembleSubAssemblies, option => option.Ignore())
+            .ForMember(c => c.Notice, option => option.Ignore());
             CreateMap<Assemble, RegisterAssembleRequestDTO>();
+
+
             //Notice
             CreateMap<RegisterNoticeRequestDTO, Notice>();
             CreateMap<Notice,RegisterNoticeRequestDTO>();
@@ -33,6 +37,9 @@ namespace MAGNA_SERVER.WebApi.Mapping
             //NoticeType
             CreateMap<RegisterNoticeTypeRequestDTO, NoticeType>();
             CreateMap<NoticeType, RegisterNoticeTypeRequestDTO>();
+            //TechnicalLocation
+            CreateMap<RegisterTechnicalLocationRequestDTO, TechnicalLocation>();
+            CreateMap<TechnicalLocation, RegisterTechnicalLocationRequestDTO>();
 
 
             // en el caso de que los nombres no coincidan con el DTO - dominio

@@ -45,63 +45,28 @@ namespace MAGNA_SERVER.DataAccess.Migrations
 
                     b.Property<string>("AssembleDescription")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("AssemblePropertyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("AssembleTypeId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AssembleVersionId")
+                    b.Property<Guid>("TechnicalLocationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AssembleTypeId");
 
-                    b.HasIndex("AssembleVersionId");
+                    b.HasIndex("TechnicalLocationId");
 
                     b.ToTable("Assemble");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleProperty", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AssemblePropertyDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssemblePropertyDetail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AssembleVersionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssembleVersionId");
-
-                    b.ToTable("AssembleProperty");
-                });
-
-            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleType", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AssembleTypeCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssembleTypeDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AssembleType");
-                });
-
-            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleVersion", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -123,25 +88,47 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AssembleVersionCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("Id");
 
-                    b.Property<string>("AssembleVersionDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.ToTable("AssembleProperty");
+                });
 
-                    b.Property<int>("AssembleVersionNumber")
-                        .HasColumnType("int");
+            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleSubAssemble", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("LocationId")
+                    b.Property<Guid>("AssembleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AssembleVersionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId");
+                    b.HasIndex("AssembleId");
 
-                    b.ToTable("AssembleVersion");
+                    b.HasIndex("AssembleVersionId");
+
+                    b.ToTable("AssembleSubAssemble");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AssembleTypeCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssembleTypeDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AssembleType");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.Departament", b =>
@@ -227,35 +214,6 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.ToTable("Gender");
                 });
 
-            modelBuilder.Entity("MAGNA_SERVER.Entities.Location", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("AreaId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DepartamentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("LocationCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("SectorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AreaId");
-
-                    b.HasIndex("DepartamentId");
-
-                    b.HasIndex("SectorId");
-
-                    b.ToTable("Location");
-                });
-
             modelBuilder.Entity("MAGNA_SERVER.Entities.Notice", b =>
                 {
                     b.Property<Guid>("Id")
@@ -265,10 +223,10 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Property<string>("AffectedPart")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("AssembleId")
+                    b.Property<Guid>("AssembleId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("EmployeeId")
+                    b.Property<Guid>("EmployeeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("FaultDescription")
@@ -277,7 +235,7 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Property<string>("FaultType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("NoticeCategoryId")
+                    b.Property<Guid>("NoticeCategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("NoticeCode")
@@ -289,14 +247,17 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Property<string>("NoticeDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("NoticePriorityId")
+                    b.Property<Guid>("NoticePriorityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("NoticeStateId")
+                    b.Property<Guid>("NoticeStateId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("TechnicalLocation")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("NoticeTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TechnicalLocationId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -309,6 +270,8 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.HasIndex("NoticePriorityId");
 
                     b.HasIndex("NoticeStateId");
+
+                    b.HasIndex("NoticeTypeId");
 
                     b.ToTable("Notice");
                 });
@@ -327,7 +290,7 @@ namespace MAGNA_SERVER.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NoticeCategory");
+                    b.ToTable("Noticecategory");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.NoticePriority", b =>
@@ -393,6 +356,38 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sector");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.TechnicalLocation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AreaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("DepartamentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("SectorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TechnicalLocationCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TechnicalLocationDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AreaId");
+
+                    b.HasIndex("DepartamentId");
+
+                    b.HasIndex("SectorId");
+
+                    b.ToTable("TechnicalLocation");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.WorkOrder", b =>
@@ -656,6 +651,16 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("MAGNA_SERVER.Entities.SubAssemble", b =>
+                {
+                    b.HasBaseType("MAGNA_SERVER.Entities.Assemble");
+
+                    b.Property<int>("AssembleVersionNumber")
+                        .HasColumnType("int");
+
+                    b.ToTable("SubAssemble");
+                });
+
             modelBuilder.Entity("MAGNA_SERVER.Entities.Assemble", b =>
                 {
                     b.HasOne("MAGNA_SERVER.Entities.AssembleType", null)
@@ -664,25 +669,30 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MAGNA_SERVER.Entities.AssembleVersion", null)
-                        .WithMany("Assemblies")
-                        .HasForeignKey("AssembleVersionId");
+                    b.HasOne("MAGNA_SERVER.Entities.TechnicalLocation", null)
+                        .WithMany("Assemble")
+                        .HasForeignKey("TechnicalLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleProperty", b =>
+            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleSubAssemble", b =>
                 {
-                    b.HasOne("MAGNA_SERVER.Entities.AssembleVersion", null)
-                        .WithMany("Properties")
-                        .HasForeignKey("AssembleVersionId");
-                });
+                    b.HasOne("MAGNA_SERVER.Entities.Assemble", "Assemble")
+                        .WithMany("AssembleSubAssemblies")
+                        .HasForeignKey("AssembleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleVersion", b =>
-                {
-                    b.HasOne("MAGNA_SERVER.Entities.Location", "Location")
+                    b.HasOne("MAGNA_SERVER.Entities.SubAssemble", "AssembleVersion")
                         .WithMany()
-                        .HasForeignKey("LocationId");
+                        .HasForeignKey("AssembleVersionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Location");
+                    b.Navigation("Assemble");
+
+                    b.Navigation("AssembleVersion");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.Employee", b =>
@@ -694,7 +704,46 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MAGNA_SERVER.Entities.Location", b =>
+            modelBuilder.Entity("MAGNA_SERVER.Entities.Notice", b =>
+                {
+                    b.HasOne("MAGNA_SERVER.Entities.Assemble", null)
+                        .WithMany("Notice")
+                        .HasForeignKey("AssembleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MAGNA_SERVER.Entities.Employee", null)
+                        .WithMany("Notice")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MAGNA_SERVER.Entities.NoticeCategory", null)
+                        .WithMany("Notice")
+                        .HasForeignKey("NoticeCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MAGNA_SERVER.Entities.NoticePriority", null)
+                        .WithMany("Notice")
+                        .HasForeignKey("NoticePriorityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MAGNA_SERVER.Entities.NoticeState", null)
+                        .WithMany("Notice")
+                        .HasForeignKey("NoticeStateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MAGNA_SERVER.Entities.NoticeType", null)
+                        .WithMany("Notice")
+                        .HasForeignKey("NoticeTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.TechnicalLocation", b =>
                 {
                     b.HasOne("MAGNA_SERVER.Entities.Area", "Area")
                         .WithMany()
@@ -713,39 +762,6 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.Navigation("Departament");
 
                     b.Navigation("Sector");
-                });
-
-            modelBuilder.Entity("MAGNA_SERVER.Entities.Notice", b =>
-                {
-                    b.HasOne("MAGNA_SERVER.Entities.Assemble", "Assemble")
-                        .WithMany()
-                        .HasForeignKey("AssembleId");
-
-                    b.HasOne("MAGNA_SERVER.Entities.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId");
-
-                    b.HasOne("MAGNA_SERVER.Entities.NoticeCategory", "NoticeCategory")
-                        .WithMany()
-                        .HasForeignKey("NoticeCategoryId");
-
-                    b.HasOne("MAGNA_SERVER.Entities.NoticePriority", "NoticePriority")
-                        .WithMany()
-                        .HasForeignKey("NoticePriorityId");
-
-                    b.HasOne("MAGNA_SERVER.Entities.NoticeState", "NoticeState")
-                        .WithMany()
-                        .HasForeignKey("NoticeStateId");
-
-                    b.Navigation("Assemble");
-
-                    b.Navigation("Employee");
-
-                    b.Navigation("NoticeCategory");
-
-                    b.Navigation("NoticePriority");
-
-                    b.Navigation("NoticeState");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.WorkOrder", b =>
@@ -820,21 +836,60 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MAGNA_SERVER.Entities.SubAssemble", b =>
+                {
+                    b.HasOne("MAGNA_SERVER.Entities.Assemble", null)
+                        .WithOne()
+                        .HasForeignKey("MAGNA_SERVER.Entities.SubAssemble", "Id")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.Assemble", b =>
+                {
+                    b.Navigation("AssembleSubAssemblies");
+
+                    b.Navigation("Notice");
+                });
+
             modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleType", b =>
                 {
                     b.Navigation("Assemble");
                 });
 
-            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleVersion", b =>
+            modelBuilder.Entity("MAGNA_SERVER.Entities.Employee", b =>
                 {
-                    b.Navigation("Assemblies");
-
-                    b.Navigation("Properties");
+                    b.Navigation("Notice");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.Gender", b =>
                 {
                     b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.NoticeCategory", b =>
+                {
+                    b.Navigation("Notice");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.NoticePriority", b =>
+                {
+                    b.Navigation("Notice");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.NoticeState", b =>
+                {
+                    b.Navigation("Notice");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.NoticeType", b =>
+                {
+                    b.Navigation("Notice");
+                });
+
+            modelBuilder.Entity("MAGNA_SERVER.Entities.TechnicalLocation", b =>
+                {
+                    b.Navigation("Assemble");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = "Create";
     ViewData["Title"] = "Create New Assemble";
-    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+    List<SelectListItem>assembleType = (List<SelectListItem>)ViewBag.assembleType;
+    List<SelectListItem> technicalLocation= (List<SelectListItem>)ViewBag.technicalLocation;
     Guid id = Guid.NewGuid();
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -27,6 +28,7 @@
     <div class="row">
        <div class="col-sm-10">
            <form method="post" asp-action="Create">
+               <h4>Assemble</h4>
                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                  <!-- Form Row-->
                 <div class="row gx-3 mb-3">
@@ -42,10 +44,7 @@
                        <input asp-for="AssembleCode" class="form-control" />
                        <span asp-validation-for="AssembleCode" class="text-danger"></span>
                     </div>
-                </div>
-                  <!-- Form Row-->
-                <div class="row gx-3 mb-3">
-                    <!-- Form Group (Description)-->
+                     <!-- Form Group (Description)-->
                     <div class="col-md-6">
                        <label asp-for="AssembleDescription" class="control-label">Description</label>
                        <input asp-for="AssembleDescription" class="form-control" />
@@ -53,11 +52,51 @@
                     </div>
                     <!-- Form Group (Type)-->
                     <div class="col-md-6">
-                      <label asp-for="AssembleType" class="control-label">Type</label>
-                      @Html.DropDownListFor(m => m.AssembleType.AssembleTypeDescription, items, new { @class = "form-control" })
-                      <span asp-validation-for="AssembleType" class="text-danger"></span>
+                      <label asp-for="AssembleType.Id" class="control-label">Type</label>
+                      @Html.DropDownListFor(m => m.AssembleType.Id, assembleType, new { @class = "form-control" })
+                      <span asp-validation-for="AssembleType.Id" class="text-danger"></span>
+                    </div>
+                    <!-- Form Group (Type)-->
+                    <div class="col-md-6">
+                      <label asp-for="TechnicalLocation.Id" class="control-label">Technical Location</label>
+                      @Html.DropDownListFor(m => m.TechnicalLocation.Id, technicalLocation, new { @class = "form-control" })
+                      <span asp-validation-for="TechnicalLocation.Id" class="text-danger"></span>
                     </div>
                 </div>
+
+                <hr />
+
+                <h4>Property</h4>
+                
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                 <!-- Form Row-->
+                <div class="row gx-3 mb-3">
+                    <!-- Form Group (Code)-->
+                    <div class="col-md-6">
+                       <label asp-for="AssembleProperty.AssembleMaker" class="control-label">Maker</label>
+                       <input asp-for="AssembleProperty.AssembleMaker" type = "text" class="form-control"/>
+                       <span asp-validation-for="AssembleProperty.AssembleMaker" class="text-danger"></span>
+                    </div>
+                       <!-- Form Group (Code)-->
+                    <div class="col-md-6">
+                       <label asp-for="AssembleProperty.AssembleSerialNumber" class="control-label">Serial Number</label>
+                       <input asp-for="AssembleProperty.AssembleSerialNumber" type = "text"class="form-control" />
+                       <span asp-validation-for="AssembleProperty.AssembleSerialNumber" class="text-danger"></span>
+                    </div>
+                    <!-- Form Group (Code)-->
+                    <div class="col-md-6">
+                       <label asp-for="AssembleProperty.AssemblePurchaseDate" class="control-label">Pruchase Date</label>
+                       <input type="date" asp-for="AssembleProperty.AssemblePurchaseDate" class="form-control" />
+                       <span asp-validation-for="AssembleProperty.AssemblePurchaseDate" class="text-danger"></span>
+                    </div>
+                     <!-- Form Group (Code)-->
+                    <div class="col-md-6">
+                       <label asp-for="AssembleProperty.AssembleDayGuarantee" class="control-label">Day Guarantee</label>
+                       <input type="number" asp-for="AssembleProperty.AssembleDayGuarantee" class="form-control" />
+                       <span asp-validation-for="AssembleProperty.AssembleDayGuarantee" class="text-danger"></span>
+                    </div>
+                </div>
+               
                <div class="form-group">
                    <input type="submit" value="Create Assemble" class="btn-group-lg btn-primary" />
                </div>
@@ -72,10 +111,10 @@
 
 </html>
 
-
-
-
-
 @section Scripts{ 
     @{<partial name="_ValidationScriptspartial"/> }
 }
+
+
+
+   

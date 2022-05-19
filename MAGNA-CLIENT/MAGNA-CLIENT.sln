@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGNA_CLIENT.Entities", "MA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGNA_CLIENT.Application.Web", "MAGNA_CLIENT.Application.Web\MAGNA_CLIENT.Application.Web.csproj", "{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGNA_CLIENT.DataAccess", "MAGNA_CLIENT.DataAccess\MAGNA_CLIENT.DataAccess.csproj", "{B8531BE4-75B1-4C33-8FEC-DDDF58F9F530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGNA_CLIENT.Repository", "MAGNA_CLIENT.Repository\MAGNA_CLIENT.Repository.csproj", "{6C529871-D298-4230-82FF-595B1612C8CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAA5384C-8472-4CAC-86F2-EE5C9B09CCFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8531BE4-75B1-4C33-8FEC-DDDF58F9F530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8531BE4-75B1-4C33-8FEC-DDDF58F9F530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8531BE4-75B1-4C33-8FEC-DDDF58F9F530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8531BE4-75B1-4C33-8FEC-DDDF58F9F530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C529871-D298-4230-82FF-595B1612C8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C529871-D298-4230-82FF-595B1612C8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C529871-D298-4230-82FF-595B1612C8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C529871-D298-4230-82FF-595B1612C8CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

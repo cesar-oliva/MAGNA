@@ -7,6 +7,7 @@ using MAGNA_CLIENT.Application.Web.Service;
 using MAGNA_CLIENT.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,6 +23,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         const string serviceGetAssemble = "api/Assemble";
         const string serviceGetNoticeState = "api/NoticeState";
         const string serviceGetNoticeType = "api/NoticeType";
+        const string serviceGetTechnicalLocation = "api/TechnicalLocation";
 
         private readonly ICrudAsync<RegisterNoticeRequestDTO> sn = new ServiceNotice();
         private readonly ICrudAsync<RegisterNoticePriorityRequestDTO> np = new ServiceNoticePriority();
@@ -30,6 +32,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         private readonly ICrudAsync<RegisterAssembleRequestDTO> sa = new ServiceAssemble();
         private readonly ICrudAsync<RegisterNoticeStateRequestDTO> ss = new ServiceNoticeState();
         private readonly ICrudAsync<RegisterNoticeTypeRequestDTO> nt = new ServiceNoticeType();
+        private readonly ICrudAsync<RegisterTechnicalLocationRequestDTO> tl = new ServiceTechnicalLocation();
 
         private readonly IMapper _mapper;
         public NoticeController(IMapper mapper)
@@ -62,37 +65,31 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
             ViewBag.assemble = await GetAssembleList();
             ViewBag.noticeState = await GetNoticeStateList();
             ViewBag.noticeType = await GetNoticeTypeList();
+            ViewBag.technicalLocation = await GetTechnicalLocationList();
             return View();
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Create([FromForm] IFormFile file, Employee employee)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
+        [HttpPost]
+        public async Task<IActionResult> Create(Notice notice)
+        {
+            ViewBag.noticePriority = await GetNoticePriorityList();
+            ViewBag.noticeCategory = await GetNoticeCategoryList();
+            ViewBag.noticeState = await GetNoticeStateList();
+            ViewBag.employee = await GetEmployeeList();
+            ViewBag.assemble = await GetAssembleList();
+            ViewBag.noticeState = await GetNoticeStateList();
+            ViewBag.noticeType = await GetNoticeTypeList();
+            ViewBag.technicalLocation = await GetTechnicalLocationList();
+            notice.Id = Guid.NewGuid();
 
-        //        ViewBag.items = items;
-        //        //foreach (var item in genderDTOList)
-        //        //{
-        //        //    if (item.Id.Equals(employee.Gender.Id))
-        //        //    {
-        //        //        employee.Gender.GenderDescription = item.GenderDescription;
-        //        //        employee.Gender.GenderState = item.GenderState;
-        //        //    }
-        //        //}
-        //        //string folder = "~/employee/profilepicture/";
-        //        //if (employee.EmployeePhotoUrl != null)
-        //        //{
-        //        //    folder += Guid.NewGuid().ToString() + "_" + file.FileName;
-        //        //    string server = Path.Combine(folder);
-        //        //}
-        //        var employeeDTO = _mapper.Map<RegisterEmployeeRequestDTO>(employee);
-        //        //employeeDTO.EmployeePhotoUrl = folder;
-        //        var request = await con.PostCreateEntity(nameService, serviceGetEmployee, employeeDTO);
-        //        TempData["mensaje_create"] = "employee created successfully";
-        //        if (request) return RedirectToAction("Index");
-        //    }
-        //    return View();
-        //}
+            if (ModelState.IsValid)
+            {               
+                var noticeDTO = _mapper.Map<RegisterNoticeRequestDTO>(notice);
+                var request = await sn.PostCreateEntity(nameService, serviceGetNotice, noticeDTO);
+                TempData["mensaje_create"] = "notice created successfully";
+                if (request) return RedirectToAction("Index");
+            }
+            return View();
+        }
 
         public async Task<List<SelectListItem>> GetNoticePriorityList()
         {
@@ -143,7 +140,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
             {
                 return new SelectListItem()
                 {
-                    Text = a.AssembleDescription.ToString(),
+                    Text = a.AssembleCode.ToString()+" "+a.AssembleDescription.ToString(),
                     Value = a.Id.ToString(),
                     Selected = false
                 };
@@ -173,6 +170,20 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
                 {
                     Text = t.NoticeTypeDescription.ToString(),
                     Value = t.Id.ToString(),
+                    Selected = false
+                };
+            });
+            return items;
+        }
+        public async Task<List<SelectListItem>> GetTechnicalLocationList()
+        {
+            var technicalLocationDTOList = await tl.GetEntity(nameService, serviceGetTechnicalLocation);
+            List<SelectListItem> items = technicalLocationDTOList.ConvertAll(l =>
+            {
+                return new SelectListItem()
+                {
+                    Text = l.TechnicalLocationDescription.ToString(),
+                    Value = l.Id.ToString(),
                     Selected = false
                 };
             });

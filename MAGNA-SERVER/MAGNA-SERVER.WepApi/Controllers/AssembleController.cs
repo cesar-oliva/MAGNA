@@ -51,19 +51,8 @@ namespace MAGNA_SERVER.WebApi.Controllers
             var assembleType = await _assembleType.GetAllAsync();
             foreach (var item in assemble)
             {
-                var dto = _mapper.Map<RegisterAssembleRequestDTO>(item);
-                foreach (var type in assembleType)
-                {
-                    if (item.AssembleTypeId.Equals(type.Id))
-                    {
-                        dto.AssembleType = type;
-                    }
-
-                }
-                assembleDTO.Add(dto);
+                assembleDTO.Add(_mapper.Map<RegisterAssembleRequestDTO>(item));
             }
-           
-
             return Ok(assembleDTO);
         }
         /// <summary>

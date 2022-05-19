@@ -345,6 +345,22 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.TechnicalLocationController.#ctor(MAGNA_SERVER.Application.IApplication{MAGNA_SERVER.Entities.TechnicalLocation},AutoMapper.IMapper)">
+            <summary>
+            receives by parameter the application in Techinical Location and we inject it
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <param name="technicalLocation"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:MAGNA_SERVER.WebApi.Controllers.TechnicalLocationController.Get">
+            <summary>
+            get a list of technical Lcoation objects
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:MAGNA_SERVER.WebApi.DataTransferObject.RegisterUserRequestDTO">
             <summary>
             represents the request by the client for user registration

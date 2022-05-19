@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MAGNA_SERVER.Entities
 {
+    [Table("NoticeState")]
     public class NoticeState:Entity 
     {
         public string NoticeStateCode{ get; set; }
         public string NoticeStateDescription { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<Notice> Notice { get; set; }
     }
 }
 
