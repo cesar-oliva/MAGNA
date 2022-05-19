@@ -72,7 +72,6 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(Guid id)
         {
-            var employee = await con.GetDetailEntity(nameService, serviceGetEmployee, id);
             ViewBag.items = await GetGenderList();
             var employeeDTO = await con.GetUpdateEntity(nameService, serviceGetEmployee, id);
             var result = _mapper.Map<Employee>(employeeDTO);

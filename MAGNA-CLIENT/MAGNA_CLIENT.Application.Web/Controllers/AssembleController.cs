@@ -62,9 +62,9 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
 
                 foreach (var item in typeDTOList)
                 {
-                    if (item.Id.Equals(assemble.AssembleType.Id))
+                    if (item.Id.Equals(assemble.AssembleTypeId))
                     {
-                        assemble.AssembleType.Id = item.Id;
+                        assemble.AssembleTypeId = item.Id;
                     }
                 }
                 var assembleDTO = _mapper.Map<RegisterAssembleRequestDTO>(assemble);
@@ -86,15 +86,27 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(Guid id)
         {
-            var assemblyDTO = await ca.GetUpdateEntity(nameService, serviceGetAssemble, id);
-            return View(assemblyDTO);
+            var assembleDTO = await ca.GetDetailEntity(nameService, serviceGetAssemble, id);
+            ViewBag.assembleType = await GetAssembleTypeList();
+            ViewBag.technicalLocation = await GetTechnicalLocationList();
+            var result = _mapper.Map<Assemble>(assembleDTO);
+            return View(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(RegisterAssembleRequestDTO assembleDTO)
+        public async Task<IActionResult> Update(Assemble assemble)        
         {
-            //var request = await con.PutUpdateEntity(nameService, serviceGet, assembleDTO);
-            //if (request) return RedirectToAction("Index");
-            return View();
+            if (ModelState.IsValid)
+            {
+                var assembleDTO = _mapper.Map<RegisterAssembleRequestDTO>(assemble);
+                var request = await ca.PutUpdateEntity(nameService, serviceGetAssemble, assembleDTO);
+                if (request)
+                {
+                    TempData["mensaje_update"] = "assemble updated successfully";
+                    return RedirectToAction("Index");
+                }
+            }
+            TempData["mensaje_delete"] = "an error occurred during the operation";
+            return RedirectToAction("Index");
         }
         /*
          DELETE
@@ -102,9 +114,39 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var request = await ca.GetDeleteEntity(nameService, serviceGetAssemble, id);
-            if (request) return RedirectToAction("Index");
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var assembleDTO = await ca.GetDetailEntity(nameService, serviceGetAssemble, id);
+            var technicalLocationDTOList = await ctl.GetEntity(nameService, serviceGetTechnicalLocation);
+            var assembleTypeDTOList = await ct.GetEntity(nameService, serviceGetAssembleType);
+            foreach (var item in assembleTypeDTOList)
+            {
+                if (item.Id.Equals(assembleDTO.AssembleTypeId))
+                    ViewBag.assembleType = item.AssembleTypeDescription;
+            }
+            foreach (var item in technicalLocationDTOList)
+            {
+                if (item.Id.Equals(assembleDTO.TechnicalLocationId))
+                    ViewBag.technicalLocation = item.TechnicalLocationDescription;
+            }
+            var assemble = _mapper.Map<Assemble>(assembleDTO);
+            return View(assemble);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(Assemble assemble)
+        {
+            if (ModelState.IsValid)
+            {
+                var request = await ca.GetDeleteEntity(nameService, serviceGetAssemble, assemble.Id);
+                TempData["mensaje_delete"] = "assemble deleted successfully";
+                if (request) return RedirectToAction("Index");
+                return View();
+            }
+            TempData["mensaje_delete"] = "an error occurred during the operation";
+            return RedirectToAction("Index");
         }
         /*
         DETAIL

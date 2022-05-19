@@ -1,49 +1,115 @@
-﻿@model MAGNA_CLIENT.Entities.Assemble
+﻿
+@model MAGNA_CLIENT.Entities.Assemble
 @{
-    ViewData["Title"] = "Update Assembly";
+    ViewBag.Title = "Update";
+    ViewData["Title"] = "Update Assemble";
+    List<SelectListItem>assembleType = (List<SelectListItem>)ViewBag.assembleType;
+    List<SelectListItem> technicalLocation= (List<SelectListItem>)ViewBag.technicalLocation;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
-
     <div class="row">
-        <div class="col-sm-6">
-            <h3>Update Assemble</h3>
-        </div>
+            <div class="col-sm-12">
+                <h3>Update Assemble</h3>
+            </div>
+            <!--breadcrumb-->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
+                    <li class="breadcrumb-item"><a href='/Employee'>Assemble</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">/ Update</li>
+                </ol>
+            </nav>
     </div>
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
-    <li class="breadcrumb-item"><a href='/Assemble'>Assemble</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Update</li>
-  </ol>
-</nav>
+</div>
+    
+<div class="container-xl px-4 mt-4">
+    <hr class="mt-0 mb-4">
     <div class="row">
-        <div class="col-sm-10">
-            <form method="post" asp-action="Update">
-                <input type="hidden" asp-for="Id" />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="AssembleCode" class="control-label"></label>
-                    <input asp-for="AssembleCode" class="form-control" />
-                    <span asp-validation-for="AssembleCode" class="text-danger"></span>
-                </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Assemblee Details</div>
+                <div class="card-body">
+                    <form asp-action="Update" asp-controller="Assemble" method="post">
+                        <h4>Assemble</h4>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (username)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssembleCode" class="control-label">Code</label>
+                                <input asp-for="AssembleCode" class="form-control" />
+                                <span asp-validation-for="AssembleCode" class="text-danger"></span>
+                            </div>
+                             <!-- Form Group (Type)-->
+                            <div class="col-md-6">
+                                <label asp-for="TechnicalLocationId" class="control-label">Technical Location</label>
+                                @Html.DropDownListFor(m => m.TechnicalLocationId, technicalLocation, new { @class = "form-control" })
+                                <span asp-validation-for="TechnicalLocationId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                             <!-- Form Group (Description)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssembleDescription" class="control-label">Description</label>
+                                <input asp-for="AssembleDescription" class="form-control" />
+                                <span asp-validation-for="AssembleDescription" class="text-danger"></span>
+                            </div>
+                            <!-- Form Group (Type)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssembleTypeId" class="control-label">Type</label>
+                                @Html.DropDownListFor(m => m.AssembleTypeId, assembleType, new { @class = "form-control" })
+                                <span asp-validation-for="AssembleTypeId" class="text-danger"></span>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label asp-for="AssembleDescription" class="control-label"></label>
-                    <input asp-for="AssembleDescription" class="form-control" />
-                    <span asp-validation-for="AssembleDescription" class="text-danger"></span>
-                </div>
+                        <hr />
+                        <h4>Property</h4>
 
-                <div class="form-group">
-                    <input type="submit" value="Update Assemble" class="btn-group-lg btn-primary" />
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                           <!-- Form Group (Code)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssembleMaker" class="control-label">Maker</label>
+                                <input asp-for="AssembleMaker" type = "text" class="form-control"/>
+                                <span asp-validation-for="AssembleMaker" class="text-danger"></span>
+                            </div>
+                               <!-- Form Group (Code)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssembleSerialNumber" class="control-label">Serial Number</label>
+                                <input asp-for="AssembleSerialNumber" type = "text"class="form-control" />
+                                <span asp-validation-for="AssembleSerialNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                           <!-- Form Group (Code)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssemblePurchaseDate" class="control-label">Pruchase Date</label>
+                                <input type="date" asp-for="AssemblePurchaseDate" class="form-control" />
+                                <span asp-validation-for="AssemblePurchaseDate" class="text-danger"></span>
+                            </div>
+                             <!-- Form Group (Code)-->
+                            <div class="col-md-6">
+                                <label asp-for="AssembleMonthsGuarantee" class="control-label">Months Guarantee</label>
+                                <input type="number" asp-for="AssembleMonthsGuarantee" class="form-control" />
+                                <span asp-validation-for="AssembleMonthsGuarantee" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Save changes button-->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <input type="submit" value="Update Assemble" class="btn btn-outline-primary  btn-lg" /> 
+                            <input type="button" value="Return Page" class="btn btn-outline-secondary btn-lg" onClick="history.go(-1);"> 
+                        </div>
+                    </form>
                 </div>
-
-            </form>
+            </div>
         </div>
     </div>
 </div>
 
-@section Scripts{
-    @{
-        <partial name="_ValidationScriptspartial" />
-    }
+@section Scripts{ 
+    @{<partial name="_ValidationScriptspartial"/> }
 }

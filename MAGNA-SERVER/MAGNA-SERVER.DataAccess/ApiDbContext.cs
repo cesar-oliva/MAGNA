@@ -19,7 +19,6 @@ namespace MAGNA_SERVER.DataAccess
         public DbSet<Assemble> Assemble { get; set; }
         public DbSet<SubAssemble> AssembleVersion { get; set; }
         public DbSet<AssembleType> AssembleType { get; set; }
-        public DbSet<AssembleProperty> AssembleProperty{ get; set; }
         public DbSet<Employee> Employee { get; set; }
         public DbSet<Area> Area { get; set; }
         public DbSet<Departament> Departament { get; set; }

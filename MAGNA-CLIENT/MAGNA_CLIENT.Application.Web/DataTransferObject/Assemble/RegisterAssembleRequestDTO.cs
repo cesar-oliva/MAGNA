@@ -11,6 +11,9 @@ namespace MAGNA_CLIENT.Application.Web.DataTransferObject
         public string AssembleDescription { get; set; }
         public Guid AssembleTypeId { get; set; }
         public Guid TechnicalLocationId { get; set; }
-        public Guid AssemblePropertyId { get; set; }
+        public string AssembleMaker { get; set; }
+        public string AssembleSerialNumber { get; set; }
+        public string AssemblePurchaseDate { get; set; }
+        public string AssembleMonthsGuarantee { get; set; }
     }
 }

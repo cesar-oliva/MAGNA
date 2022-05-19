@@ -43,13 +43,26 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AssembleDayGuarantee")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("AssembleDescription")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid>("AssemblePropertyId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("AssembleMaker")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssemblePurchaseDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssembleSerialNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("AssembleTypeId")
                         .HasColumnType("uniqueidentifier");
@@ -64,33 +77,6 @@ namespace MAGNA_SERVER.DataAccess.Migrations
                     b.HasIndex("TechnicalLocationId");
 
                     b.ToTable("Assemble");
-                });
-
-            modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleProperty", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AssembleDayGuarantee")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssembleMaker")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssemblePurchaseDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssembleSerialNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AssembleProperty");
                 });
 
             modelBuilder.Entity("MAGNA_SERVER.Entities.AssembleSubAssemble", b =>

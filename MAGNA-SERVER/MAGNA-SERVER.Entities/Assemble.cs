@@ -22,7 +22,13 @@ namespace MAGNA_SERVER.Entities
         [Required]
         public Guid TechnicalLocationId { get; set; }
         [Required]
-        public Guid AssemblePropertyId { get; set; }
+        public string AssembleMaker { get; set; }
+        [Required]
+        public string AssembleSerialNumber { get; set; }
+        [Required]
+        public string AssemblePurchaseDate { get; set; }
+        [Required]
+        public string AssembleMonthsGuarantee { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<Notice> Notice { get; set; }

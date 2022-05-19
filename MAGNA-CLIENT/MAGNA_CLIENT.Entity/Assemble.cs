@@ -16,11 +16,17 @@ namespace MAGNA_CLIENT.Entities
         [StringLength(100)]
         public string AssembleDescription { get; set; }
         [Required]
-        public virtual AssembleType AssembleType { get; set; }
+        public Guid AssembleTypeId { get; set; }
         [Required]
-        public virtual TechnicalLocation TechnicalLocation { get; set; }
+        public Guid TechnicalLocationId { get; set; }
         [Required]
-        public virtual AssembleProperty AssembleProperty { get; set; }
+        public string AssembleMaker { get; set; }
+        [Required]
+        public string AssembleSerialNumber { get; set; }
+        [Required]
+        public string AssemblePurchaseDate { get; set; }
+        [Required]
+        public string AssembleMonthsGuarantee { get; set; }
 
     }
 }
