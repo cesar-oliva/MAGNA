@@ -1,15 +1,15 @@
 ﻿@model MAGNA_CLIENT.Entities.Notice
 @{
-    ViewBag.Title = "Create";
-    ViewData["Title"] = "Create New Notice";
-    List<SelectListItem> priority = (List<SelectListItem>)ViewBag.noticePriority;
-    List<SelectListItem> category = (List<SelectListItem>)ViewBag.noticeCategory;
-    List<SelectListItem> employee = (List<SelectListItem>)ViewBag.employee;
-    List<SelectListItem> assemble = (List<SelectListItem>)ViewBag.assemble;
-    List<SelectListItem> state = (List<SelectListItem>)ViewBag.noticeState;
-    List<SelectListItem> type = (List<SelectListItem>)ViewBag.noticeType;
-    List<SelectListItem> location = (List<SelectListItem>)ViewBag.technicalLocation;
-
+    ViewBag.Title = "Detail";
+    ViewData["Title"] = "Detail Notice";
+    string assembleType = (string)ViewBag.assembleType;
+    string priority = (string)ViewBag.noticePriority;
+    string category = (string)ViewBag.noticeCategory;
+    string employee = (string)ViewBag.employee;
+    string assemble = (string)ViewBag.assemble;
+    string state = (string)ViewBag.noticeState;
+    string type = (string)ViewBag.noticeType;
+    string location = (string)ViewBag.technicalLocation;
     Layout = "~/Views/Shared/_Layout.cshtml";   
 }
 
@@ -17,14 +17,14 @@
 <div class="container">
     <div class="row">
             <div class="col-sm-12">
-                <h3>Create New Notice</h3>
+                <h3>Detail Notice</h3>
             </div>
             <!--breadcrumb-->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
                     <li class="breadcrumb-item"><a href='/Notice'>Notice</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">/ Create</li>
+                    <li class="breadcrumb-item active" aria-current="page">/ Detail</li>
                 </ol>
             </nav>
     </div>
@@ -37,34 +37,34 @@
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
-                <div class="card-header">Notice Details</div>
+                <div class="card-header">Notice Detail</div>
                 <div class="card-body">
-                    <form asp-action="Create" asp-controller="Notice" method="post">
+                    <form asp-action="Detail" asp-controller="Notice" method="post">
                         <h4>Notice</h4>
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (username)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeDate" class="control-label">Notice Date</label>
-                                <input type = "date" asp-for="NoticeDate" class="form-control" placeholder="Enter description" />
+                                <input type = "date" asp-for="NoticeDate" class="form-control" placeholder="Enter description" readonly/>
                                 <span asp-validation-for="NoticeDate" class="text-danger"></span>
                             </div>
                              <!-- Form Group (Type)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeCode" class="control-label">Code</label>
-                                <input asp-for="NoticeCode" class="form-control" />
+                                <input asp-for="NoticeCode" class="form-control" readonly/>
                                 <span asp-validation-for="NoticeCode" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Description)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeDescription" class="control-label">Description</label>
-                                <input asp-for="NoticeDescription" class="form-control" />
+                                <input asp-for="NoticeDescription" class="form-control" readonly/>
                                 <span asp-validation-for="NoticeDescription" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Type)-->
                             <div class="col-md-6">
                                <label asp-for="NoticePriorityId" class="control-label">Execution Priority</label>
-                               @Html.DropDownListFor(m => m.NoticePriorityId, priority,"-- Select one --", new { @class = "form-control"})
+                               <input type="text" class="form-control"placeholder=@priority readonly />
                                <span asp-validation-for="NoticePriorityId" class="text-danger"></span>
                             </div>
                         </div>
@@ -73,25 +73,25 @@
                              <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeeId" class="control-label">Employee</label>
-                                @Html.DropDownListFor(m => m.EmployeeId, employee,"-- Select one --", new { @class = "form-control"})
+                                <input type="text" class="form-control"placeholder=@employee readonly />
                                 <span asp-validation-for="EmployeeId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeStateId" class="control-label">Notice State</label>
-                                @Html.DropDownListFor(m => m.NoticeStateId, state,"-- Select one --", new { @class = "form-control" })
+                                <input type="text" class="form-control"placeholder=@state readonly /> 
                                 <span asp-validation-for="NoticeStateId" class="text-danger"></span>
                             </div>
                              <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeCategoryId" class="control-label">Category</label>
-                                @Html.DropDownListFor(m => m.NoticeCategoryId, category,"-- Select one --", new { @class = "form-control" })
+                                <input type="text" class="form-control"placeholder=@category readonly /> 
                                 <span asp-validation-for="NoticeCategoryId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeTypeId" class="control-label">Notice Type</label>
-                                @Html.DropDownListFor(m => m.NoticeTypeId, type,"-- Select one --", new { @class = "form-control" })
+                                <input type="text" class="form-control"placeholder=@type readonly /> 
                                 <span asp-validation-for="NoticeTypeId" class="text-danger"></span>
                             </div>
                         </div>
@@ -100,25 +100,25 @@
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="AssembleId" class="control-label">Broken Assemble</label>
-                                @Html.DropDownListFor(m => m.AssembleId, assemble,"-- Select one --", new { @class = "form-control" })
+                                <input type="text" class="form-control"placeholder=@assemble readonly /> 
                                 <span asp-validation-for="AssembleId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="TechnicalLocationId" class="control-label">Technical Location</label>
-                                @Html.DropDownListFor(m => m.TechnicalLocationId,location,"-- Select one --", new { @class = "form-control" })
+                                <input type="text" class="form-control"placeholder=@location readonly /> 
                                 <span asp-validation-for="TechnicalLocationId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="FaultType" class="control-label">Fault Type</label>
-                                <input asp-for="FaultType" class="form-control" placeholder="Fault Type" />
+                                <input asp-for="FaultType" class="form-control" placeholder="Fault Type" readonly/>
                                 <span asp-validation-for="FaultType" class="text-danger"></span>
                             </div>
                             <!-- Form Group-->
                             <div class="col-md-6">
                                  <label asp-for="AffectedPart" class="control-label">Affected Part</label>
-                                 <input asp-for="AffectedPart" class="form-control" placeholder="Affected Part" />
+                                 <input asp-for="AffectedPart" class="form-control" placeholder="Affected Part" readonly/>
                                  <span asp-validation-for="AffectedPart" class="text-danger"></span>
                             </div>
                         </div>
@@ -126,13 +126,12 @@
                         <div class="row gx-3 mb-3">
                            <div class="col-md-12">
                                  <label asp-for="FaultDescription" class="control-label">Fault Description</label>
-                                 <textarea asp-for="FaultDescription" class="form-control" placeholder="Enter Fualt Description"></textarea>
+                                 <textarea asp-for="FaultDescription" class="form-control" placeholder="Enter Fualt Description" readonly></textarea>
                                  <span asp-validation-for="FaultDescription" class="text-danger"></span>
                            </div>
                         </div>
                         <!-- Save changes button-->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <input type="submit" value="Create Notice" class="btn btn-outline-primary  btn-lg" /> 
                             <input type="button" value="Return Page" class="btn btn-outline-secondary btn-lg" onClick="history.go(-1);"> 
                         </div>
                     </form>

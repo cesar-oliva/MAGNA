@@ -87,7 +87,3 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
     }
 }
 
-
-  //"userName": "cesar",
-  //"email": "cesar@gmail.com",
-  //"password": "Cesar@1"

@@ -154,25 +154,34 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(Guid id)
         {
-            var typeDTOList = await ct.GetEntity(nameService, serviceGetAssembleType);
-            List<SelectListItem> items = typeDTOList.ConvertAll(t =>
-            {
-                return new SelectListItem()
-                {
-                    Text = t.AssembleTypeDescription.ToString(),
-                    Value = t.Id.ToString(),
-                    Selected = false
-                };
-            });
-            ViewBag.items = items;
             if (id == null)
             {
                 return NotFound();
             }
             var assembleDTO = await ca.GetDetailEntity(nameService, serviceGetAssemble, id);
+            var technicalLocationDTOList = await ctl.GetEntity(nameService, serviceGetTechnicalLocation);
+            var assembleTypeDTOList = await ct.GetEntity(nameService, serviceGetAssembleType);
+            foreach (var item in assembleTypeDTOList)
+            {
+                if (item.Id.Equals(assembleDTO.AssembleTypeId))
+                    ViewBag.assembleType = item.AssembleTypeDescription;
+            }
+            foreach (var item in technicalLocationDTOList)
+            {
+                if (item.Id.Equals(assembleDTO.TechnicalLocationId))
+                    ViewBag.technicalLocation = item.TechnicalLocationDescription;
+            }
             var assemble = _mapper.Map<Assemble>(assembleDTO);
             return View(assemble);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Detail(Employee employee)
+        {
+            return RedirectToAction("Index");
+        }
+
+
         public async Task<List<SelectListItem>> GetAssembleTypeList()
         {
             var assembleTypeDTOList = await ct.GetEntity(nameService, serviceGetAssembleType);

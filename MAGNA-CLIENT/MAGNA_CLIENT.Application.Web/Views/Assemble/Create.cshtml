@@ -17,7 +17,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
-                    <li class="breadcrumb-item"><a href='/Employee'>Assemble</a></li>
+                    <li class="breadcrumb-item"><a href='/Assemble'>Assemble</a></li>
                     <li class="breadcrumb-item active" aria-current="page">/ Create</li>
                 </ol>
             </nav>
@@ -46,7 +46,7 @@
                              <!-- Form Group (Type)-->
                             <div class="col-md-6">
                                 <label asp-for="TechnicalLocationId" class="control-label">Technical Location</label>
-                                @Html.DropDownListFor(m => m.TechnicalLocationId, technicalLocation, new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.TechnicalLocationId, technicalLocation,"-- Select one --", new { @class = "form-control" })
                                 <span asp-validation-for="TechnicalLocationId" class="text-danger"></span>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                             <!-- Form Group (Type)-->
                             <div class="col-md-6">
                                 <label asp-for="AssembleTypeId" class="control-label">Type</label>
-                                @Html.DropDownListFor(m => m.AssembleTypeId, assembleType, new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.AssembleTypeId, assembleType,"-- Select one --", new { @class = "form-control" })
                                 <span asp-validation-for="AssembleTypeId" class="text-danger"></span>
                             </div>
                         </div>

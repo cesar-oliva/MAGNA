@@ -90,7 +90,7 @@
                             <!-- Form Group (Gender)-->
                             <div class="col-md-6">
                                     <label asp-for="GenderId" class="control-label">Gender</label>
-                                    @Html.DropDownListFor(m => m.GenderId, items, new { @class = "form-control" })
+                                    @Html.DropDownListFor(m => m.GenderId, items,"-- Select one --", new { @class = "form-control" })
                                     <span asp-validation-for="GenderId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (address)-->

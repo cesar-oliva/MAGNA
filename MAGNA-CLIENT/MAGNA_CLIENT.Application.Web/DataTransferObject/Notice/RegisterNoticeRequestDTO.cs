@@ -9,7 +9,7 @@ namespace MAGNA_CLIENT.Application.Web.DataTransferObject
         public string NoticeDescription { get; set; }
         public Guid NoticeTypeId { get; set; }
         public DateTime NoticeDate { get; set; }
-        public string NoticeState { get; set; }
+        public Guid NoticeStateId { get; set; }
         public Guid NoticePriorityId { get; set; }
         public string FaultType { get; set; }
         public Guid TechnicalLocationId { get; set; }

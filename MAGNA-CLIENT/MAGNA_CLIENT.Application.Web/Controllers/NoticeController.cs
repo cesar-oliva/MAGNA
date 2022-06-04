@@ -42,6 +42,7 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
         //GET: Assemble
         public async Task<IActionResult> Index()
         {
+            TempData.Clear();
             List<Notice> noticeList = new();
             var noticeDTOList = await sn.GetEntity(nameService, serviceGetNotice);
             foreach (var item in noticeDTOList)
@@ -63,7 +64,6 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
             ViewBag.noticeState = await GetNoticeStateList();
             ViewBag.employee = await GetEmployeeList();
             ViewBag.assemble = await GetAssembleList();
-            ViewBag.noticeState = await GetNoticeStateList();
             ViewBag.noticeType = await GetNoticeTypeList();
             ViewBag.technicalLocation = await GetTechnicalLocationList();
             return View();
@@ -76,7 +76,6 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
             ViewBag.noticeState = await GetNoticeStateList();
             ViewBag.employee = await GetEmployeeList();
             ViewBag.assemble = await GetAssembleList();
-            ViewBag.noticeState = await GetNoticeStateList();
             ViewBag.noticeType = await GetNoticeTypeList();
             ViewBag.technicalLocation = await GetTechnicalLocationList();
             notice.Id = Guid.NewGuid();
@@ -89,6 +88,174 @@ namespace MAGNA_CLIENT.Application.Web.Controllers
                 if (request) return RedirectToAction("Index");
             }
             return View();
+        }
+        /*
+        UPDATE
+       */
+        [HttpGet]
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var noticeDTO = await sn.GetDetailEntity(nameService, serviceGetNotice, id);
+            ViewBag.noticePriority = await GetNoticePriorityList();
+            ViewBag.noticeCategory = await GetNoticeCategoryList();
+            ViewBag.noticeState = await GetNoticeStateList();
+            ViewBag.employee = await GetEmployeeList();
+            ViewBag.assemble = await GetAssembleList();
+            ViewBag.noticeType = await GetNoticeTypeList();
+            ViewBag.technicalLocation = await GetTechnicalLocationList();
+            var result = _mapper.Map<Notice>(noticeDTO);
+            return View(result);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(Notice notice)
+        {
+            if (ModelState.IsValid)
+            {
+                var noticeDTO = _mapper.Map<RegisterNoticeRequestDTO>(notice);
+                var request = await sn.PutUpdateEntity(nameService, serviceGetNotice, noticeDTO);
+                if (request)
+                {
+                    TempData["mensaje_update"] = "notice updated successfully";
+                    return RedirectToAction("Index");
+                }
+            }
+            TempData["mensaje_delete"] = "an error occurred during the operation";
+            return RedirectToAction("Index");
+        }
+        /*
+        DELETE
+       */
+        [HttpGet]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var noticePriorityList = await np.GetEntity(nameService, serviceGetNoticePriority);
+            var noticeCategoryList = await nc.GetEntity(nameService, serviceGetNoticeCategory);
+            var noticeStateList = await ss.GetEntity(nameService, serviceGetNoticeState);
+            var employeeList = await se.GetEntity(nameService, serviceGetEmployee);
+            var assembleList = await sa.GetEntity(nameService, serviceGetAssemble);
+            var noticeTypeList = await nt.GetEntity(nameService, serviceGetNoticeType);
+            var technicalLocationList = await tl.GetEntity(nameService, serviceGetTechnicalLocation);
+
+            var noticeDTO = await sn.GetDetailEntity(nameService, serviceGetNotice, id);
+
+            foreach (var item in noticePriorityList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticePriorityId))
+                    ViewBag.noticePriority = item.NoticePriorityDescription;
+            }
+            foreach (var item in noticeCategoryList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticeCategoryId))
+                    ViewBag.noticeCategory = item.NoticeCategoryDescription;
+            }
+            foreach (var item in noticeStateList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticeStateId))
+                    ViewBag.noticeState = item.NoticeStateDescription;
+            }
+            foreach (var item in employeeList)
+            {
+                if (item.Id.Equals(noticeDTO.EmployeeId))
+                    ViewBag.employee = item.EmployeeFirstName+" "+item.EmployeeLastName;
+            }
+            foreach (var item in assembleList)
+            {
+                if (item.Id.Equals(noticeDTO.AssembleId))
+                    ViewBag.assemble = item.AssembleDescription;
+            }
+            foreach (var item in noticeTypeList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticeTypeId))
+                    ViewBag.noticeType = item.NoticeTypeDescription;
+            }
+            foreach (var item in technicalLocationList)
+            {
+                if (item.Id.Equals(noticeDTO.TechnicalLocationId))
+                    ViewBag.technicalLocation = item.TechnicalLocationDescription;
+            }
+            var notice = _mapper.Map<Notice>(noticeDTO);
+            return View(notice);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(Notice notice)
+        {
+            if (ModelState.IsValid)
+            {
+                var request = await sn.GetDeleteEntity(nameService, serviceGetNotice, notice.Id);
+                TempData["mensaje_delete"] = "notice deleted successfully";
+                if (request) return RedirectToAction("Index");
+                return View();
+            }
+            TempData["mensaje_delete"] = "an error occurred during the operation";
+            return RedirectToAction("Index");
+        }
+        ///*
+        //DETAIL
+        //*/
+        [HttpGet]
+        public async Task<IActionResult> Detail(Guid id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var noticePriorityList = await np.GetEntity(nameService, serviceGetNoticePriority);
+            var noticeCategoryList = await nc.GetEntity(nameService, serviceGetNoticeCategory);
+            var noticeStateList = await ss.GetEntity(nameService, serviceGetNoticeState);
+            var employeeList = await se.GetEntity(nameService, serviceGetEmployee);
+            var assembleList = await sa.GetEntity(nameService, serviceGetAssemble);
+            var noticeTypeList = await nt.GetEntity(nameService, serviceGetNoticeType);
+            var technicalLocationList = await tl.GetEntity(nameService, serviceGetTechnicalLocation);
+
+            var noticeDTO = await sn.GetDetailEntity(nameService, serviceGetNotice, id);
+
+            foreach (var item in noticePriorityList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticePriorityId))
+                    ViewBag.noticePriority = item.NoticePriorityDescription;
+            }
+            foreach (var item in noticeCategoryList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticeCategoryId))
+                    ViewBag.noticeCategory = item.NoticeCategoryDescription;
+            }
+            foreach (var item in noticeStateList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticeStateId))
+                    ViewBag.noticeState = item.NoticeStateDescription;
+            }
+            foreach (var item in employeeList)
+            {
+                if (item.Id.Equals(noticeDTO.EmployeeId))
+                    ViewBag.employee = item.EmployeeFirstName + " " + item.EmployeeLastName;
+            }
+            foreach (var item in assembleList)
+            {
+                if (item.Id.Equals(noticeDTO.AssembleId))
+                    ViewBag.assemble = item.AssembleDescription;
+            }
+            foreach (var item in noticeTypeList)
+            {
+                if (item.Id.Equals(noticeDTO.NoticeTypeId))
+                    ViewBag.noticeType = item.NoticeTypeDescription;
+            }
+            foreach (var item in technicalLocationList)
+            {
+                if (item.Id.Equals(noticeDTO.TechnicalLocationId))
+                    ViewBag.technicalLocation = item.TechnicalLocationDescription;
+            }
+            var notice = _mapper.Map<Notice>(noticeDTO);
+            return View(notice);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Detail(Notice notice)
+        {
+            return RedirectToAction("Index");
         }
 
         public async Task<List<SelectListItem>> GetNoticePriorityList()

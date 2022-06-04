@@ -9,7 +9,6 @@
     List<SelectListItem> state = (List<SelectListItem>)ViewBag.noticeState;
     List<SelectListItem> type = (List<SelectListItem>)ViewBag.noticeType;
     List<SelectListItem> location = (List<SelectListItem>)ViewBag.technicalLocation;
-
     Layout = "~/Views/Shared/_Layout.cshtml";   
 }
 
@@ -17,14 +16,14 @@
 <div class="container">
     <div class="row">
             <div class="col-sm-12">
-                <h3>Create New Notice</h3>
+                <h3>Update Notice</h3>
             </div>
             <!--breadcrumb-->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href='/Home'>MAGNA</a></li>
                     <li class="breadcrumb-item"><a href='/Notice'>Notice</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">/ Create</li>
+                    <li class="breadcrumb-item active" aria-current="page">/ Update</li>
                 </ol>
             </nav>
     </div>
@@ -39,7 +38,7 @@
             <div class="card mb-4">
                 <div class="card-header">Notice Details</div>
                 <div class="card-body">
-                    <form asp-action="Create" asp-controller="Notice" method="post">
+                    <form asp-action="Update" asp-controller="Notice" method="post">
                         <h4>Notice</h4>
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="row gx-3 mb-3">
@@ -63,8 +62,9 @@
                             </div>
                             <!-- Form Group (Type)-->
                             <div class="col-md-6">
-                               <label asp-for="NoticePriorityId" class="control-label">Execution Priority</label>
-                               @Html.DropDownListFor(m => m.NoticePriorityId, priority,"-- Select one --", new { @class = "form-control"})
+                               <label asp-for="NoticePriorityId" class="control-label">Execution Priority</label> 
+                               @Html.DropDownListFor(m => m.NoticePriorityId, priority, new { @class = "form-control" })
+                               <asp:ListItem Enabled="true" Selected="True" Text="Please select city"></asp:ListItem>
                                <span asp-validation-for="NoticePriorityId" class="text-danger"></span>
                             </div>
                         </div>
@@ -73,25 +73,25 @@
                              <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="EmployeeId" class="control-label">Employee</label>
-                                @Html.DropDownListFor(m => m.EmployeeId, employee,"-- Select one --", new { @class = "form-control"})
+                                @Html.DropDownListFor(m => m.EmployeeId, employee, new { @class = "form-control" })
                                 <span asp-validation-for="EmployeeId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeStateId" class="control-label">Notice State</label>
-                                @Html.DropDownListFor(m => m.NoticeStateId, state,"-- Select one --", new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.NoticeStateId, state, new { @class = "form-control" })
                                 <span asp-validation-for="NoticeStateId" class="text-danger"></span>
                             </div>
                              <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeCategoryId" class="control-label">Category</label>
-                                @Html.DropDownListFor(m => m.NoticeCategoryId, category,"-- Select one --", new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.NoticeCategoryId, category, new { @class = "form-control" })
                                 <span asp-validation-for="NoticeCategoryId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="NoticeTypeId" class="control-label">Notice Type</label>
-                                @Html.DropDownListFor(m => m.NoticeTypeId, type,"-- Select one --", new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.NoticeTypeId, type, new { @class = "form-control" })
                                 <span asp-validation-for="NoticeTypeId" class="text-danger"></span>
                             </div>
                         </div>
@@ -100,13 +100,13 @@
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="AssembleId" class="control-label">Broken Assemble</label>
-                                @Html.DropDownListFor(m => m.AssembleId, assemble,"-- Select one --", new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.AssembleId, assemble, new { @class = "form-control" })
                                 <span asp-validation-for="AssembleId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
                             <div class="col-md-6">
                                 <label asp-for="TechnicalLocationId" class="control-label">Technical Location</label>
-                                @Html.DropDownListFor(m => m.TechnicalLocationId,location,"-- Select one --", new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.TechnicalLocationId,location, new { @class = "form-control" })
                                 <span asp-validation-for="TechnicalLocationId" class="text-danger"></span>
                             </div>
                             <!-- Form Group (Code)-->
@@ -118,7 +118,7 @@
                             <!-- Form Group-->
                             <div class="col-md-6">
                                  <label asp-for="AffectedPart" class="control-label">Affected Part</label>
-                                 <input asp-for="AffectedPart" class="form-control" placeholder="Affected Part" />
+                                 <input asp-for="AffectedPart" class="form-control" placeholder="Fault Type" />
                                  <span asp-validation-for="AffectedPart" class="text-danger"></span>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                         </div>
                         <!-- Save changes button-->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <input type="submit" value="Create Notice" class="btn btn-outline-primary  btn-lg" /> 
+                            <input type="submit" value="Update Notice" class="btn btn-outline-warning btn-lg" /> 
                             <input type="button" value="Return Page" class="btn btn-outline-secondary btn-lg" onClick="history.go(-1);"> 
                         </div>
                     </form>
@@ -145,4 +145,3 @@
 @section Scripts{ 
     @{<partial name="_ValidationScriptspartial"/> }
 }
-
